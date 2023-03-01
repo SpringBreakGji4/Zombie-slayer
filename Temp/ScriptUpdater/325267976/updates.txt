@@ -1,1 +1,0 @@
-Temp/ScriptUpdater/325267976/1044601378_NormalZombie.cs => Assets/Script/Zombie Script/NormalZombie.cs
