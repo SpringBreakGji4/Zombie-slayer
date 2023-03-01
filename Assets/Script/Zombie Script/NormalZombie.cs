@@ -5,7 +5,8 @@ using UnityEngine;
 public class NormalZombie : MonoBehaviour
 {
 	public float moveSpeed = 2f;
-    public float attackRange = 1.5f;
+	public float runSpeed = 4f;
+    public float attackRange = 2f;
 	public float attackCooldown = 2f;
 	public int maxHealth = 100;
 	public int defense = 10;
@@ -15,7 +16,8 @@ public class NormalZombie : MonoBehaviour
 	private int currentHealth;
 	private bool isDead = false;
 	private bool isAttacking = false;
-	private bool isWalking = true;
+	private bool isWalking = false;
+	private bool isRunning = true;
 	private Transform target;
 
 
@@ -33,17 +35,23 @@ public class NormalZombie : MonoBehaviour
         	float distance = Vector3.Distance(transform.position, target.position);
 			if (distance < attackRange)
             {
-                if (!isAttacking)
-                {
-                    //StartCoroutine(Attack());
-                }
+                	if (!isAttacking)
+                	{
+                    	StartCoroutine(Attack());
+                	}
+				GetComponent<Animation>().Play("Attack1");
             }
 			else{
 				transform.LookAt(target);
 				if(isWalking){
 					GetComponent<Animation>().Play("Walk");
+					transform.position += transform.forward * moveSpeed * Time.deltaTime;
 				}
-				transform.position += transform.forward * moveSpeed * Time.deltaTime;
+				else if(isRunning){
+					GetComponent<Animation>().Play("Run");
+					transform.position += transform.forward * runSpeed * Time.deltaTime;
+				}
+				
 			}
 			
 			
@@ -51,13 +59,15 @@ public class NormalZombie : MonoBehaviour
     }
 	IEnumerator Attack()
     {
-        isAttacking = true;
-        yield return new WaitForSeconds(attackCooldown);
-        if (!isDead)
-        {
-            //target.GetComponent<Player>().TakeDamage(Random.Range(5, 15));
-        }
-        isAttacking = false;
+        	isAttacking = true;
+		GetComponent<Animation>().Play("Idle");
+        	yield return new WaitForSeconds(attackCooldown);
+		//GetComponent<Animation>().Play("Attack1");
+        	if (!isDead)
+        	{
+            	//target.GetComponent<Player>().TakeDamage(Random.Range(5, 15));
+        	}
+        	isAttacking = false;
     }
 
 	IEnumerator Die()
