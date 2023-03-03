@@ -8,6 +8,7 @@ public class NormalZombie : MonoBehaviour
 	public float runSpeed = 4f;
     	public float attackRange = 1.5f;
 	public float attackCooldown = 2f;
+	public float detectRange = 10f;
 	public int maxHealth = 100;
 	public int defense = 10;
 	public GameObject zombie;	
@@ -31,8 +32,8 @@ public class NormalZombie : MonoBehaviour
 
     	// Update is called once per frame
     	void Update(){
-		if(!isDead){
-			float distance = Vector3.Distance(transform.position, target.position);
+		float distance = Vector3.Distance(transform.position, target.position);
+		if(!isDead && distance < detectRange){
 			if (distance < attackRange){
 				if (!isAttacking){
 					StartCoroutine(Attack());
@@ -52,6 +53,14 @@ public class NormalZombie : MonoBehaviour
 				
 			}		
         	}
+		else{
+			if(isDead){
+				GetComponent<Animation>().Play("Death");
+			}
+			else{
+				GetComponent<Animation>().Play("Idle");
+			}
+		}
     	}
 	IEnumerator Attack(){
         	isAttacking = true;

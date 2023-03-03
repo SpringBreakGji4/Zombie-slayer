@@ -352,6 +352,8 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/Zombie Script/NormalZombie.cs"
+"Assets/Script/Zombie Script/normal_object_movement.cs"
+"Assets/Script/Zombie Script/player.cs"
 -langversion:9.0
 
 /deterministic
