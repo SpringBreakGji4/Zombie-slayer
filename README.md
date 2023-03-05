@@ -1,5 +1,4 @@
 # CS6334 - Virtual Reality
-![GitHub repo size](https://img.shields.io/github/repo-size/SpringBreakGji4/Zombie-slayer)
 
 # Zombie-slayer
 ## Team Information
