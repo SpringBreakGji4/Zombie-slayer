@@ -11,7 +11,8 @@ public class NormalZombie : MonoBehaviour
 	public float detectRange = 10f;
 	public int maxHealth = 100;
 	public int defense = 10;
-	public GameObject zombie;	
+	public GameObject zombie;
+	//public GameObject Plane;
 	public LayerMask obstacleMask;
 
 	private int currentHealth;
@@ -21,56 +22,67 @@ public class NormalZombie : MonoBehaviour
 	private bool isRunning = true;
 	private Transform target;
 	private Vector3 direction;
+	//private Vector3 WorldPlane;
+	private Vector3 targetPosition;
 	private Rigidbody rb; 
+	private Animation anim;
 
     	// Start is called before the first frame update
     	void Start(){
         	currentHealth = maxHealth;
         	target = GameObject.FindGameObjectWithTag("Player").transform;
+		//WorldPlane = Plane.position;
 		rb = GetComponent<Rigidbody>();
+		anim = GetComponent<Animation>();
     	}
 
     	// Update is called once per frame
     	void Update(){
-		float distance = Vector3.Distance(transform.position, target.position);
-		if(!isDead && distance < detectRange){
-			if (distance < attackRange){
-				if (!isAttacking){
+		//targetPosition = 
+		targetPosition = target.position;
+		targetPosition.y -= 1f;
+		float distance = Vector3.Distance(transform.position, targetPosition);
+		if(!isAttacking){
+			if(!isDead && distance < detectRange){
+				if (distance < attackRange){
+					if (!isAttacking){
+						isAttacking = true;
+					}
 					StartCoroutine(Attack());
 				}
-				GetComponent<Animation>().Play("Attack1");
-			}
+				else{
+					transform.LookAt(target);
+					if(isWalking){
+						anim.Play("Walk");
+						transform.position += transform.forward * moveSpeed * Time.deltaTime;
+					}
+					else if(isRunning){
+						anim.Play("Run");
+						transform.position += transform.forward * runSpeed * Time.deltaTime;
+					}
+					
+				}		
+        		}
 			else{
-				transform.LookAt(target);
-				if(isWalking){
-					GetComponent<Animation>().Play("Walk");
-					transform.position += transform.forward * moveSpeed * Time.deltaTime;
+				if(isDead){
+					anim.Play("Death");
 				}
-				else if(isRunning){
-					GetComponent<Animation>().Play("Run");
-					transform.position += transform.forward * runSpeed * Time.deltaTime;
+				else{
+					anim.Play("Idle");
 				}
-				
-			}		
-        	}
-		else{
-			if(isDead){
-				GetComponent<Animation>().Play("Death");
 			}
-			else{
-				GetComponent<Animation>().Play("Idle");
-			}
-		}
-    	}
+    		}
+	}
 	IEnumerator Attack(){
-        	isAttacking = true;
-		GetComponent<Animation>().Play("Idle");
-        	yield return new WaitForSeconds(attackCooldown);
-		//GetComponent<Animation>().Play("Attack1");
-        	if (!isDead){
+		anim.Play("Attack1");
+		//while(anim.isPlaying){
+		yield return new WaitForSeconds(anim.GetClip("Attack1").length);
+		isAttacking = false;
+		
+		//yield return new WaitForSeconds(attackCooldown);
+        	//if (!isDead){
             		//target.GetComponent<Player>().TakeDamage(Random.Range(5, 15));
-        	}
-        	isAttacking = false;
+        	//}
     	}
 
 	IEnumerator Die(){
