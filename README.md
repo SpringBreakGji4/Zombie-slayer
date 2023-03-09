@@ -12,8 +12,8 @@
 ### Online multiplayer 
 - Collaborate with a companion in co-op campaign mode.
 - Voice chat with teammates simultaneously
-### Free exploration
-- Discover vast environments in an old house
+### Zombie AI with proximity detection
+- Zombie will have basic AI to detect presence of players
 
 ## Potential assets
 
