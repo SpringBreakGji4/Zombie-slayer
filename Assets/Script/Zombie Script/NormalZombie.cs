@@ -4,46 +4,78 @@ using UnityEngine;
 
 public class NormalZombie : MonoBehaviour
 {
-	public float moveSpeed = 2f;
-	public float runSpeed = 4f;
-    	public float attackRange = 1.5f;
-	public float attackCooldown = 2f;
-	public float detectRange = 10f;
-	public int maxHealth = 100;
-	public int defense = 10;
+	
 	public GameObject zombie;
 	//public GameObject Plane;
-	public LayerMask obstacleMask;
+	public LayerMask obstacleLayer;
+	public int zombie_mode = 1;
+
+	private float walkSpeed;
+	private float runSpeed;
+    	private float attackRange;
+	private float detectRange;
+	private int maxHealth;
+	private int defense;
+	private float changeDirectionTime;
 
 	private int currentHealth;
 	private bool isDead = false;
 	private bool isAttacking = false;
-	private bool isWalking = false;
-	private bool isRunning = true;
 	private Transform target;
+	private Transform tem_target;
 	private Vector3 direction;
-	//private Vector3 WorldPlane;
 	private Vector3 targetPosition;
 	private Rigidbody rb; 
 	private Animation anim;
+	private Vector3 randomDirection;
+	private float directionChangeTimer;
 
     	// Start is called before the first frame update
     	void Start(){
         	currentHealth = maxHealth;
         	target = GameObject.FindGameObjectWithTag("Player").transform;
-		//WorldPlane = Plane.position;
-		rb = GetComponent<Rigidbody>();
+		//tem_target = Instantiate(target, target.position, target.rotation);
 		anim = GetComponent<Animation>();
+		if(zombie_mode == 1){
+			walkSpeed = 1.5f;
+			runSpeed = 1.5f;
+			attackRange = 1.5f;
+			detectRange = 10f;
+			maxHealth = 100;
+			defense = 10;
+			changeDirectionTime = 6f;
+		}
+		else if(zombie_mode == 2){
+			walkSpeed = 1.5f;
+			runSpeed = 1.5f;
+			attackRange = 1.5f;
+			detectRange = 10f;
+			maxHealth = 100;
+			defense = 10;
+			changeDirectionTime = 6f;
+		}
+		else if(zombie_mode == 3){
+			walkSpeed = 1.5f;
+			runSpeed = 6f;
+			attackRange = 1.5f;
+			detectRange = 10f;
+			maxHealth = 100;
+			defense = 10;
+			changeDirectionTime = 3f;
+		}
+		directionChangeTimer = changeDirectionTime;
     	}
 
     	// Update is called once per frame
     	void Update(){
-		//targetPosition = 
-		targetPosition = target.position;
-		targetPosition.y -= 1f;
-		float distance = Vector3.Distance(transform.position, targetPosition);
+		//targetPosition.y -= 1f;
+		//float distance = Vector3.Distance(transform.position, targetPosition);
+		float distance = Vector3.Distance(transform.position, target.position);
 		if(!isAttacking){
-			if(!isDead && distance < detectRange){
+			if(isDead){
+				anim.Play("Death");
+			}
+			else if(distance < detectRange){
 				if (distance < attackRange){
 					if (!isAttacking){
 						isAttacking = true;
@@ -52,24 +84,52 @@ public class NormalZombie : MonoBehaviour
 				}
 				else{
 					transform.LookAt(target);
-					if(isWalking){
+					if(zombie_mode <= 2){
 						anim.Play("Walk");
-						transform.position += transform.forward * moveSpeed * Time.deltaTime;
+						transform.position += transform.forward * runSpeed * Time.deltaTime;
 					}
-					else if(isRunning){
+					else if(zombie_mode <= 4){
 						anim.Play("Run");
 						transform.position += transform.forward * runSpeed * Time.deltaTime;
 					}
 					
-				}		
+				}
+				directionChangeTimer = changeDirectionTime;	
         		}
 			else{
-				if(isDead){
-					anim.Play("Death");
+				directionChangeTimer -= Time.deltaTime;
+				if(directionChangeTimer >0 && directionChangeTimer <= changeDirectionTime/2){
+					randomDirection = new Vector3(0f, 0f, 0f).normalized;
 				}
-				else{
+				else if(directionChangeTimer <= 0f){
+					randomDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+					directionChangeTimer = changeDirectionTime;
+				}
+				targetPosition = transform.position+randomDirection*walkSpeed;
+				if(zombie_mode == 1){
 					anim.Play("Idle");
 				}
+				else if(zombie_mode == 2){
+					if(transform.position != targetPosition){
+						transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(randomDirection), Time.deltaTime * walkSpeed);
+						transform.position = Vector3.MoveTowards(transform.position, targetPosition, walkSpeed * Time.deltaTime);
+						anim.Play("Walk");
+					}
+					else{
+						anim.Play("Idle");
+					}
+				}
+				else if(zombie_mode == 3){
+					if(transform.position != targetPosition){
+						transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(randomDirection), Time.deltaTime * walkSpeed);
+						transform.position = Vector3.MoveTowards(transform.position, targetPosition, walkSpeed * Time.deltaTime);
+						anim.Play("Walk");
+					}
+					else{
+						anim.Play("Idle");
+					}
+				}
+				
 			}
     		}
 	}

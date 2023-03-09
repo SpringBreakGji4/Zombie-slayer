@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 315076675}
   - component: {fileID: 315076674}
   - component: {fileID: 315076677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 652396545}
   - component: {fileID: 652396544}
   - component: {fileID: 652396548}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Environment
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 665252087}
   - component: {fileID: 665252090}
   - component: {fileID: 665252091}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 811283170}
   - component: {fileID: 811283169}
   - component: {fileID: 811283168}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (2)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -630,7 +630,7 @@ GameObject:
   - component: {fileID: 977802688}
   - component: {fileID: 977802687}
   - component: {fileID: 977802686}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (3)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -923,17 +923,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9029989e620584228b4387d3e0af51ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  runSpeed: 6
-  attackRange: 2
-  attackCooldown: 4
-  detectRange: 30
-  maxHealth: 100
-  defense: 10
   zombie: {fileID: 1498945394}
-  obstacleMask:
+  obstacleLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
+  zombie_mode: 3
 --- !u!54 &1498945400
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -989,7 +983,7 @@ GameObject:
   - component: {fileID: 1544038396}
   - component: {fileID: 1544038395}
   - component: {fileID: 1544038394}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (4)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -1243,7 +1237,7 @@ GameObject:
   - component: {fileID: 2024563021}
   - component: {fileID: 2024563020}
   - component: {fileID: 2024563019}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (5)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -1358,7 +1352,7 @@ GameObject:
   - component: {fileID: 2081897028}
   - component: {fileID: 2081897027}
   - component: {fileID: 2081897026}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall (1)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
