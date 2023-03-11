@@ -29,6 +29,7 @@ public class NormalZombie : MonoBehaviour
 	private Animation anim;
 	private Vector3 randomDirection;
 	private float directionChangeTimer;
+	private BoxCollider boxCollider;
 
     	// Start is called before the first frame update
     	void Start(){
@@ -36,6 +37,8 @@ public class NormalZombie : MonoBehaviour
         	target = GameObject.FindGameObjectWithTag("Player").transform;
 		//tem_target = Instantiate(target, target.position, target.rotation);
 		anim = GetComponent<Animation>();
+		boxCollider = GetComponent<BoxCollider>();
+
 		if(zombie_mode == 1){
 			walkSpeed = 1.5f;
 			runSpeed = 1.5f;
@@ -55,13 +58,16 @@ public class NormalZombie : MonoBehaviour
 			changeDirectionTime = 3f;
 		}
 		else if(zombie_mode == 3){
-			walkSpeed = 1.5f;
-			runSpeed = 6f;
-			attackRange = 1.5f;
-			detectRange = 10f;
-			maxHealth = 100;
-			defense = 10;
+			walkSpeed = 3f;
+			runSpeed = 12f;
+			attackRange = 3f;
+			detectRange = 20f;
+			maxHealth = 500;
+			defense = 100;
 			changeDirectionTime = 3f;
+			transform.localScale *= 2;
+			boxCollider.size *= 2;
+			boxCollider.center *= 2;
 		}
 		directionChangeTimer = changeDirectionTime;
     	}
@@ -88,7 +94,7 @@ public class NormalZombie : MonoBehaviour
 						anim.Play("Walk");
 						transform.position += transform.forward * runSpeed * Time.deltaTime;
 					}
-					else if(zombie_mode == 2){
+					else if(zombie_mode <= 4){
 						anim.Play("Run");
 						transform.position += transform.forward * runSpeed * Time.deltaTime;
 					}
