@@ -47,12 +47,12 @@ public class NormalZombie : MonoBehaviour
 		}
 		else if(zombie_mode == 2){
 			walkSpeed = 1.5f;
-			runSpeed = 1.5f;
+			runSpeed = 6f;
 			attackRange = 1.5f;
 			detectRange = 10f;
 			maxHealth = 100;
 			defense = 10;
-			changeDirectionTime = 6f;
+			changeDirectionTime = 3f;
 		}
 		else if(zombie_mode == 3){
 			walkSpeed = 1.5f;
@@ -84,11 +84,11 @@ public class NormalZombie : MonoBehaviour
 				}
 				else{
 					transform.LookAt(target);
-					if(zombie_mode <= 2){
+					if(zombie_mode == 1){
 						anim.Play("Walk");
 						transform.position += transform.forward * runSpeed * Time.deltaTime;
 					}
-					else if(zombie_mode <= 4){
+					else if(zombie_mode == 2){
 						anim.Play("Run");
 						transform.position += transform.forward * runSpeed * Time.deltaTime;
 					}
