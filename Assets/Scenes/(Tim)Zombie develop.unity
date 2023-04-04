@@ -395,7 +395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1539481679264539993, guid: 4ba5cbea767d9b54eb7a655b769517da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.784228
+      value: 9.27
       objectReference: {fileID: 0}
     - target: {fileID: 1539481679264539993, guid: 4ba5cbea767d9b54eb7a655b769517da, type: 3}
       propertyPath: m_LocalPosition.y
@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1539481679264539993, guid: 4ba5cbea767d9b54eb7a655b769517da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.933699
+      value: 33.66
       objectReference: {fileID: 0}
     - target: {fileID: 1539481679264539993, guid: 4ba5cbea767d9b54eb7a655b769517da, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1417,7 +1417,7 @@ Animator:
   m_GameObject: {fileID: 1569579872}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f0a1ccbcad752104484b92f85be3f1f1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8cd913eb064be87499c59512b376c52c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2b22719ac188e4ea984570a926275f22, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1427,6 +1427,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1569579878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569579872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95806a88f0d74f308da53a42f8673e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombie: {fileID: 1569579872}
+  zombie_mode: 3
 --- !u!1001 &1710677736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1589,7 +1603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749285867}
   m_LocalRotation: {x: 0.0740238, y: 0.03307205, z: 0.0063016224, w: 0.99668807}
-  m_LocalPosition: {x: 15.12, y: 4.53, z: 10.94}
+  m_LocalPosition: {x: 14.49, y: 8.32, z: 2.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
