@@ -49,13 +49,13 @@ public class NormalZombie : MonoBehaviour
 			changeDirectionTime = 6f;
 		}
 		else if(zombie_mode == 2){
-			walkSpeed = 3f;
+			walkSpeed = 2.2f;
 			runSpeed = 6f;
 			attackRange = 1.5f;
 			detectRange = 10f;
 			maxHealth = 100;
 			defense = 10;
-			changeDirectionTime = 3f;
+			changeDirectionTime = 6f;
 		}
 		else if(zombie_mode == 3){
 			walkSpeed = 3f;
