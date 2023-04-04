@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Zombie
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - obstacleLayer
   - Water
   - UI
-  - Obstacle
+  - 
   - 
   - 
   - 
