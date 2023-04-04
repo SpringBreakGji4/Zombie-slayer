@@ -33,7 +33,6 @@ public class NormalZombie : MonoBehaviour
 
     	// Start is called before the first frame update
     	void Start(){
-        	currentHealth = maxHealth;
         	target = GameObject.FindGameObjectWithTag("Player").transform;
 		//tem_target = Instantiate(target, target.position, target.rotation);
 		anim = GetComponent<Animation>();
@@ -45,7 +44,7 @@ public class NormalZombie : MonoBehaviour
 			attackRange = 1.5f;
 			detectRange = 10f;
 			maxHealth = 100;
-			defense = 10;
+			//defense = 10;
 			changeDirectionTime = 6f;
 		}
 		else if(zombie_mode == 2){
@@ -54,10 +53,10 @@ public class NormalZombie : MonoBehaviour
 			attackRange = 1.5f;
 			detectRange = 10f;
 			maxHealth = 100;
-			defense = 10;
+			//defense = 10;
 			changeDirectionTime = 6f;
 		}
-		else if(zombie_mode == 3){
+		/*else if(zombie_mode == 3){
 			walkSpeed = 3f;
 			runSpeed = 12f;
 			attackRange = 3f;
@@ -68,8 +67,10 @@ public class NormalZombie : MonoBehaviour
 			transform.localScale *= 2;
 			boxCollider.size *= 2;
 			boxCollider.center *= 2;
-		}
+		}*/
+
 		directionChangeTimer = changeDirectionTime;
+		currentHealth = maxHealth;
     	}
 
     	// Update is called once per frame
@@ -94,7 +95,7 @@ public class NormalZombie : MonoBehaviour
 						anim.Play("Walk");
 						transform.position += transform.forward * runSpeed * Time.deltaTime;
 					}
-					else if(zombie_mode <= 4){
+					else if(zombie_mode == 2){
 						anim.Play("Run");
 						transform.position += transform.forward * runSpeed * Time.deltaTime;
 					}
@@ -139,6 +140,7 @@ public class NormalZombie : MonoBehaviour
 			}
     		}
 	}
+
 	IEnumerator Attack(){
 		anim.Play("Attack1");
 		//while(anim.isPlaying){
@@ -156,4 +158,6 @@ public class NormalZombie : MonoBehaviour
         	yield return new WaitForSeconds(3f);
         	Destroy(gameObject);
     	}
+
+
 }
