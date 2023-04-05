@@ -7,11 +7,19 @@ using Photon.Realtime;
 using System.Linq;
 public class Launcher : MonoBehaviourPunCallbacks
 {
+    public static Launcher Instance;
+    
     [SerializeField] TMP_InputField roomNameInputField;
     [SerializeField] TMP_Text errorText;
     [SerializeField] TMP_Text roomNameText;
     [SerializeField] Transform roomListContent;
     [SerializeField] GameObject roomListItemPrefab;
+    
+    void Awake()
+    {
+        Instance = this;
+    }
+    
     void Start()
     {
         Debug.Log("Connecting to the master");
