@@ -47,7 +47,7 @@ public class AdvZombie : MonoBehaviour
 			runSpeed = 10f;
 			attackRange = 1.5f;
 			detectRange = 10f;
-			//unsafeRange = 20f;
+			unsafeRange = 20f;
 			maxHealth = 100;
 			//defense = 10;
 			changeDirectionTime = 6f;
@@ -65,15 +65,22 @@ public class AdvZombie : MonoBehaviour
 				//anim.Play("Death");
 			}
 			else if(distance < unsafeRange){
+				//anim.SetBool("dancing",false);
 				if (distance < attackRange){
-					isAttacking = true;
-					//anim.Play("attack");
-					//isAttacking = false;
-					StartCoroutine(Attack());
+					
+					if(zombie_mode == 3){
+						isAttacking = true;
+						//anim.Play("attack");
+						//isAttacking = false;
+						StartCoroutine(Attack());
+					}
+					else{
+						StartCoroutine(Wait());
+					}
 				}
 				else if(distance < detectRange){
 					transform.LookAt(target);
-					if(zombie_mode == 3){
+					if(zombie_mode <= 4){
 						//anim.SetBool("isWalk",true);
 						//anim.Play("walk", -1, 0f);
 						anim.Play("walk");
@@ -86,16 +93,24 @@ public class AdvZombie : MonoBehaviour
 				}
 			}
 			else{
+				//anim.SetBool("dancing",true);
 				anim.CrossFade("Idle", 0.1f);
 			}
 		}		
 		
     }
 	
-	IEnumerator Attack(){
+    IEnumerator Attack(){
 		anim.Play("attack");
 		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
 		yield return new WaitForSeconds(2*anim.GetCurrentAnimatorStateInfo(0).length);
+		isAttacking = false;
+    }
+		
+    IEnumerator Wait(){
+		anim.Play("Idle");
+		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
+		yield return new WaitForSeconds(5*anim.GetCurrentAnimatorStateInfo(0).length);
 		isAttacking = false;
     }
 }
