@@ -16,6 +16,7 @@ public class MenuControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)){
             pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }
