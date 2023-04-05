@@ -41,7 +41,7 @@ public class NormalZombie : MonoBehaviour
 		if(zombie_mode == 1){
 			walkSpeed = 1.5f;
 			runSpeed = 1.5f;
-			attackRange = 1.5f;
+			attackRange = 3f;
 			detectRange = 10f;
 			maxHealth = 100;
 			//defense = 10;
@@ -50,7 +50,7 @@ public class NormalZombie : MonoBehaviour
 		else if(zombie_mode == 2){
 			walkSpeed = 2.2f;
 			runSpeed = 6f;
-			attackRange = 1.5f;
+			attackRange = 3f;
 			detectRange = 10f;
 			maxHealth = 100;
 			//defense = 10;
@@ -78,11 +78,11 @@ public class NormalZombie : MonoBehaviour
 		//targetPosition.y -= 1f;
 		//float distance = Vector3.Distance(transform.position, targetPosition);
 		float distance = Vector3.Distance(transform.position, target.position);
-		if(!isAttacking){
-			if(isDead){
+		if(isDead){
 				anim.Play("Death");
-			}
-			else if(distance < detectRange){
+		}
+		else if(!isAttacking){
+			if(distance < detectRange){
 				if (distance < attackRange){
 					if (!isAttacking){
 						isAttacking = true;

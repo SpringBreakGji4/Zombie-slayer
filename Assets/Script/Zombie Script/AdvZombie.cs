@@ -35,21 +35,21 @@ public class AdvZombie : MonoBehaviour
 		if(zombie_mode == 3){
 			//walkSpeed = 2.2f;
 			runSpeed = 7f;
-			attackRange = 1.5f;
+			attackRange = 3f;
 			detectRange = 10f;
 			unsafeRange = 20f;
 			maxHealth = 100;
-			//defense = 10;
+			defense = 10;
 			changeDirectionTime = 6f;
 		}
 		else if(zombie_mode == 4){
 			//walkSpeed = 2.2f;
 			runSpeed = 10f;
-			attackRange = 1.5f;
+			attackRange = 3f;
 			detectRange = 10f;
-			//unsafeRange = 20f;
+			unsafeRange = 20f;
 			maxHealth = 100;
-			//defense = 10;
+			defense = 10;
 			changeDirectionTime = 6f;
 		}
 		directionChangeTimer = changeDirectionTime;
@@ -60,20 +60,28 @@ public class AdvZombie : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, target.position);
-		if(!isAttacking){
-			if(isDead){
+		if(isDead){
 				//anim.Play("Death");
-			}
-			else if(distance < unsafeRange){
+		}
+		else if(!isAttacking){
+			if(distance < unsafeRange){
+				defense = 20;
+				//anim.SetBool("dancing",false);
 				if (distance < attackRange){
-					isAttacking = true;
-					//anim.Play("attack");
-					//isAttacking = false;
-					StartCoroutine(Attack());
+					if(zombie_mode == 3){
+						//Debug.Log("Attacking ... ");
+						isAttacking = true;
+						//anim.Play("attack");
+						//isAttacking = false;
+						StartCoroutine(Attack());
+					}
+					else{
+						StartCoroutine(Wait());
+					}
 				}
 				else if(distance < detectRange){
 					transform.LookAt(target);
-					if(zombie_mode == 3){
+					if(zombie_mode <= 4){
 						//anim.SetBool("isWalk",true);
 						//anim.Play("walk", -1, 0f);
 						anim.Play("walk");
@@ -86,16 +94,26 @@ public class AdvZombie : MonoBehaviour
 				}
 			}
 			else{
+				//anim.SetBool("dancing",true);
+				defense = 10;
 				anim.CrossFade("Idle", 0.1f);
 			}
+			
 		}		
 		
     }
 	
-	IEnumerator Attack(){
+    IEnumerator Attack(){
 		anim.Play("attack");
 		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
-		yield return new WaitForSeconds(2*anim.GetCurrentAnimatorStateInfo(0).length);
+		yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+		isAttacking = false;
+    }
+		
+    IEnumerator Wait(){
+		anim.Play("Idle");
+		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
+		yield return new WaitForSeconds(5*anim.GetCurrentAnimatorStateInfo(0).length);
 		isAttacking = false;
     }
 }
