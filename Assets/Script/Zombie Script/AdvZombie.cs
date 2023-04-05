@@ -34,10 +34,20 @@ public class AdvZombie : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 		if(zombie_mode == 3){
 			//walkSpeed = 2.2f;
-			runSpeed = 6f;
+			runSpeed = 7f;
 			attackRange = 1.5f;
 			detectRange = 10f;
-			unsafeRange = 15f;
+			unsafeRange = 20f;
+			maxHealth = 100;
+			//defense = 10;
+			changeDirectionTime = 6f;
+		}
+		else if(zombie_mode == 4){
+			//walkSpeed = 2.2f;
+			runSpeed = 10f;
+			attackRange = 1.5f;
+			detectRange = 10f;
+			//unsafeRange = 20f;
 			maxHealth = 100;
 			//defense = 10;
 			changeDirectionTime = 6f;
@@ -57,6 +67,8 @@ public class AdvZombie : MonoBehaviour
 			else if(distance < unsafeRange){
 				if (distance < attackRange){
 					isAttacking = true;
+					//anim.Play("attack");
+					//isAttacking = false;
 					StartCoroutine(Attack());
 				}
 				else if(distance < detectRange){
@@ -82,7 +94,8 @@ public class AdvZombie : MonoBehaviour
 	
 	IEnumerator Attack(){
 		anim.Play("attack");
-		yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
+		yield return new WaitForSeconds(2*anim.GetCurrentAnimatorStateInfo(0).length);
 		isAttacking = false;
     }
 }
