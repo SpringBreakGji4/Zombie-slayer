@@ -5,8 +5,8 @@ using UnityEngine;
 public class AdvZombie : MonoBehaviour
 {
 
-	public GameObject zombie;
-	public int zombie_mode = 1;
+	//public GameObject zombie;
+	public int zombie_mode;
 
 	private float walkSpeed;
 	private float runSpeed;
@@ -24,6 +24,9 @@ public class AdvZombie : MonoBehaviour
 	//private bool isRage = false;
 	
 	private Transform target;
+	private Vector3 direction;
+	private Vector3 targetPosition;
+	private Vector3 randomDirection;
 	private float directionChangeTimer;
 	private Animator anim;
 
@@ -40,15 +43,15 @@ public class AdvZombie : MonoBehaviour
 			unsafeRange = 20f;
 			maxHealth = 100;
 			defense = 10;
-			changeDirectionTime = 6f;
+			changeDirectionTime = 4f;
 		}
 		else if(zombie_mode == 4){
 			//walkSpeed = 2.2f;
 			runSpeed = 10f;
 			attackRange = 3f;
-			detectRange = 10f;
-			unsafeRange = 20f;
-			maxHealth = 100;
+			detectRange = 15f;
+			unsafeRange = 30f;
+			maxHealth = 200;
 			defense = 10;
 			changeDirectionTime = 6f;
 		}
@@ -65,14 +68,17 @@ public class AdvZombie : MonoBehaviour
 		}
 		else if(!isAttacking){
 			if(distance < unsafeRange){
-				defense = 20;
-				//anim.SetBool("dancing",false);
+				if(zombie_mode == 3){
+					defense = 20;
+					runSpeed = 7;
+				}
+				else if(zombie_mode == 4){
+					defense = 40;
+					runSpeed = 10;
+				}
 				if (distance < attackRange){
 					if(zombie_mode == 3){
-						//Debug.Log("Attacking ... ");
 						isAttacking = true;
-						//anim.Play("attack");
-						//isAttacking = false;
 						StartCoroutine(Attack());
 					}
 					else{
@@ -81,22 +87,62 @@ public class AdvZombie : MonoBehaviour
 				}
 				else if(distance < detectRange){
 					transform.LookAt(target);
-					if(zombie_mode <= 4){
-						//anim.SetBool("isWalk",true);
-						//anim.Play("walk", -1, 0f);
-						anim.Play("walk");
-						transform.position += transform.forward * runSpeed * Time.deltaTime;
-					}
+					//anim.SetBool("isWalk",true);
+					//anim.Play("walk", -1, 0f);
+					anim.Play("walk");
+					transform.position += transform.forward * runSpeed * Time.deltaTime;
 					directionChangeTimer = changeDirectionTime;	
-        		}
+				}
 				else{
-					anim.CrossFade("Idle1", 0.1f);
+					directionChangeTimer -= Time.deltaTime;
+					if(directionChangeTimer >0 && directionChangeTimer <= changeDirectionTime/2){
+						randomDirection = new Vector3(0f, 0f, 0f).normalized;
+					}
+					else if(directionChangeTimer <= 0f){
+						randomDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+						directionChangeTimer = changeDirectionTime;
+					}
+					targetPosition = transform.position+randomDirection*runSpeed;
+					if(transform.position != targetPosition){
+							transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(randomDirection), Time.deltaTime * runSpeed);
+							transform.position = Vector3.MoveTowards(transform.position, targetPosition, runSpeed * Time.deltaTime);
+						//anim.CrossFade("walk", 0.1f);
+						anim.Play("walk");
+					}
+					else{
+						//anim.Play("Idle1");
+						anim.CrossFade("Idle1", 0.1f);
+					}
 				}
 			}
 			else{
-				//anim.SetBool("dancing",true);
-				defense = 10;
-				anim.CrossFade("Idle", 0.1f);
+				if(zombie_mode == 3){
+					defense = 20;
+					runSpeed = 3;
+				}
+				else if(zombie_mode == 4){
+					defense = 40;
+					runSpeed = 5;
+				}
+				directionChangeTimer -= Time.deltaTime;
+				if(directionChangeTimer >0 && directionChangeTimer <= changeDirectionTime/2){
+					randomDirection = new Vector3(0f, 0f, 0f).normalized;
+				}
+				else if(directionChangeTimer <= 0f){
+					randomDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+					directionChangeTimer = changeDirectionTime;
+				}
+				targetPosition = transform.position+randomDirection*runSpeed;
+				if(transform.position != targetPosition){
+						transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(randomDirection), Time.deltaTime * runSpeed);
+						transform.position = Vector3.MoveTowards(transform.position, targetPosition, runSpeed * Time.deltaTime);
+					//anim.CrossFade("walk", 0.1f);
+					anim.Play("walk");
+				}
+				else{
+					//anim.Play("Idle");
+					anim.CrossFade("Idle", 0.1f);
+				}
 			}
 			
 		}		
