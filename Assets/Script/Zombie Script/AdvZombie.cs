@@ -162,4 +162,13 @@ public class AdvZombie : MonoBehaviour
 		yield return new WaitForSeconds(5*anim.GetCurrentAnimatorStateInfo(0).length);
 		isAttacking = false;
     }
+
+	public void Damage(int damageAmount) {
+		maxHealth -= damageAmount;
+		Debug.Log("hit adv, remain blood: " + maxHealth);
+		if (maxHealth <= 0)
+		{
+			Destroy(gameObject);
+		}
+	}
 }

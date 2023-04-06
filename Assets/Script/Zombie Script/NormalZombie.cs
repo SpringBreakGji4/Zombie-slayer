@@ -159,5 +159,14 @@ public class NormalZombie : MonoBehaviour
         	Destroy(gameObject);
     	}
 
+	public void Damage(int damageAmount) {
+		maxHealth -= damageAmount;
+		Debug.Log("hit normal, remain blood: " + maxHealth);
+		if (maxHealth <= 0)
+		{
+			Destroy(gameObject);
+		}
+	}
+
 
 }
