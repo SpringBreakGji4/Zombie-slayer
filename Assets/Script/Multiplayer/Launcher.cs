@@ -18,7 +18,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] Transform playerListContent;
     [SerializeField] GameObject PlayerListItemPrefab;
     [SerializeField] GameObject startGameButton;
-
+    [SerializeField] private string randomRoomName;
     void Awake()
     {
         Instance = this;
@@ -43,6 +43,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         MenuManager.Instance.OpenMenu("title");
         Debug.Log("Joined Lobby");
         PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000"); //random generate username
+        Debug.Log("User Name: " + PhotonNetwork.NickName);
     }
 
     public void CreateRoom()

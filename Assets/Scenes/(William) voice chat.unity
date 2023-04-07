@@ -2877,6 +2877,7 @@ MonoBehaviour:
   playerListContent: {fileID: 1158771566}
   PlayerListItemPrefab: {fileID: 3711084645194089859, guid: fc63fc808aeb2441985be40791ea804c, type: 3}
   startGameButton: {fileID: 740442831}
+  randomRoomName: 
 --- !u!114 &1308740582
 MonoBehaviour:
   m_ObjectHideFlags: 0
