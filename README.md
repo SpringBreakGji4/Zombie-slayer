@@ -1,4 +1,3 @@
-Create a “ReadMe” document that explains which Unity scene contains your preliminary prototype. The document must explain what the interaction techniques are and how to use them with the Android phone and controller. If you’re using other types of VR equipment in addition to Android phone, you must explain what the interaction techniques are and how to use them with your equipment along with the model’s name of the equipment. If your project involves multiplayers, you must explain how to operate with multiple devices. Also, include a YouTube link of your video. 
 # Zombie Slayer - README
 Welcome to our VR Shooting Game! In this game, you'll have the opportunity to experience a thrilling and immersive shooting game in a virtual reality environment, where you'll be shooting zombies.
 
