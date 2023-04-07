@@ -1,4 +1,4 @@
-# Team Information
+# Zombie Slayer - Team Information
 #### Team name: Team Slay
 #### Team#: 6
 ### Team member:
