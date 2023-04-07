@@ -1,19 +1,2 @@
-# CS6334 - Virtual Reality
-
-# Zombie-slayer
-## Team Information
-### Team Slay
-### Team# 6
-
-## Key features
-### Weapons
-- Experience realistic weapon handling with over 5 weapons.
-- As you use real-life movements to anticipate attacks, manage your ammunition, and blast your enemies into undead pieces.
-### Online multiplayer 
-- Collaborate with a companion in co-op campaign mode.
-- Voice chat with teammates simultaneously
-### Zombie AI with proximity detection
-- Zombie will have basic AI to detect presence of players
-
-## Potential assets
-
+Create a “ReadMe” document that explains which Unity scene contains your preliminary prototype. The document must explain what the interaction techniques are and how to use them with the Android phone and controller. If you’re using other types of VR equipment in addition to Android phone, you must explain what the interaction techniques are and how to use them with your equipment along with the model’s name of the equipment. If your project involves multiplayers, you must explain how to operate with multiple devices. Also, include a YouTube link of your video. 
+# Readme
