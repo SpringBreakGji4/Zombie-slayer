@@ -12,9 +12,9 @@
 - Multiplayer function, using the Photon
 #### Matthew Chang
 - Building the main scene, house construction.
-#### Chia-Hen Lee
+#### Chih-Hen Lee
 - System menu implementation and manipulation.
 #### YuChing Chang
 - Players and guns implementation.
-#### Shut-Ting Hsu
+#### Shuo-Ting Hsu
 - Zombie and auto-tracing system.
