@@ -38,7 +38,7 @@ public class AdvZombie : MonoBehaviour
 		if(zombie_mode == 3){
 			//walkSpeed = 2.2f;
 			runSpeed = 7f;
-			attackRange = 3f;
+			attackRange = 5f;
 			detectRange = 30f;
 			unsafeRange = 40f;
 			maxHealth = 100;
