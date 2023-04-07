@@ -38,6 +38,9 @@ Our VR Shooting Game includes the following features:
 - Intuitive Bluetooth controller controls
 - Zombie will have basic AI to detect presence of players
 
+## Demo
+Check out our demo video on YouTube: [Zombie-Slayer](http://youtube.com)
+
 ## Support
 If you experience any issues while playing the VR Shooting Game, please don't hesitate to contact us and give us any suggestions.
 We hope you enjoy playing it and survive the zombie apocalypse!
