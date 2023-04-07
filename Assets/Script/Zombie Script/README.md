@@ -12,7 +12,7 @@
 - When the player is inside the unsafe range, zombie will randomly walk around and its run speed and defense will increase.
 - When the player is detected, zombie will run to player and attack.
 
-## mode 3 zombie
+## mode 4 zombie
 - When the player is out of unsafe range, zombie will randomly walk around or dance.
 - When the player is inside the unsafe range, zombie will randomly walk around and its run speed and defense will increase.
 - When the player is detected, zombie will run to player and dance.
