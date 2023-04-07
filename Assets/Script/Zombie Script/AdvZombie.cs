@@ -39,8 +39,8 @@ public class AdvZombie : MonoBehaviour
 			//walkSpeed = 2.2f;
 			runSpeed = 7f;
 			attackRange = 3f;
-			detectRange = 10f;
-			unsafeRange = 20f;
+			detectRange = 30f;
+			unsafeRange = 40f;
 			maxHealth = 100;
 			defense = 4;
 			changeDirectionTime = 4f;
@@ -49,8 +49,8 @@ public class AdvZombie : MonoBehaviour
 			//walkSpeed = 2.2f;
 			runSpeed = 10f;
 			attackRange = 3f;
-			detectRange = 15f;
-			unsafeRange = 30f;
+			detectRange = 30f;
+			unsafeRange = 40f;
 			maxHealth = 200;
 			defense = 5;
 			changeDirectionTime = 6f;
