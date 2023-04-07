@@ -17,6 +17,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject roomListItemPrefab;
     [SerializeField] Transform playerListContent;
     [SerializeField] GameObject PlayerListItemPrefab;
+    [SerializeField] GameObject startGameButton;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.Log("Connected to Master");
         PhotonNetwork.JoinLobby();
         //Debug.Log("We are now connected to the " + PhotonNetwork.CloudRegion + " server!");
+        PhotonNetwork.AutomaticallySyncScene = true; // Automatically load scene for all the client but not just host loaded 
     }
 
     public override void OnJoinedLobby()
@@ -64,6 +66,13 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
         }
+        
+        startGameButton.SetActive(PhotonNetwork.IsMasterClient); // Let only host can start the game but other clients cannot start the game
+    }
+    
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        startGameButton.SetActive(PhotonNetwork.IsMasterClient); // In case the master leave the room, photon will reassign a master role to one of client randomly
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
@@ -71,6 +80,11 @@ public class Launcher : MonoBehaviourPunCallbacks
         errorText.text = "Room Creation Failed: " + message;
         Debug.Log("Room Creation Failed: " + message);
         MenuManager.Instance.OpenMenu("error");
+    }
+    
+    public void StartGame()
+    {
+        PhotonNetwork.LoadLevel(1); //use "1" as the parameter because 1 is the build index of our game scene as we set it in the build settings
     }
 
     public void LeaveRoom()
