@@ -44,7 +44,7 @@ public class NormalZombie : MonoBehaviour
 			attackRange = 3f;
 			detectRange = 10f;
 			maxHealth = 100;
-			//defense = 10;
+			defense = 2;
 			changeDirectionTime = 6f;
 		}
 		else if(zombie_mode == 2){
@@ -53,7 +53,7 @@ public class NormalZombie : MonoBehaviour
 			attackRange = 3f;
 			detectRange = 10f;
 			maxHealth = 100;
-			//defense = 10;
+			defense = 3;
 			changeDirectionTime = 6f;
 		}
 		/*else if(zombie_mode == 3){
@@ -79,7 +79,7 @@ public class NormalZombie : MonoBehaviour
 		//float distance = Vector3.Distance(transform.position, targetPosition);
 		float distance = Vector3.Distance(transform.position, target.position);
 		if(isDead){
-				anim.Play("Death");
+				StartCoroutine(Die());
 		}
 		else if(!isAttacking){
 			if(distance < detectRange){
@@ -142,9 +142,16 @@ public class NormalZombie : MonoBehaviour
 	}
 
 	IEnumerator Attack(){
-		anim.Play("Attack1");
+		if(zombie_mode == 1){
+			anim.Play("Attack1");
 		//while(anim.isPlaying){
-		yield return new WaitForSeconds(anim.GetClip("Attack1").length);
+			yield return new WaitForSeconds(anim.GetClip("Attack1").length);
+		}
+		else if(zombie_mode == 2){
+			anim.Play("Attack2");
+		//while(anim.isPlaying){
+			yield return new WaitForSeconds(anim.GetClip("Attack2").length);
+		}
 		isAttacking = false;
 		
 		//yield return new WaitForSeconds(attackCooldown);
@@ -155,16 +162,19 @@ public class NormalZombie : MonoBehaviour
 
 	IEnumerator Die(){
        		// Play death animation or sound
-        	yield return new WaitForSeconds(3f);
-        	Destroy(gameObject);
+		anim.Play("Death");
+        	//yield return new WaitForSeconds(3f);
+        	yield return new WaitForSeconds(anim.GetClip("Death").length);
+		Destroy(gameObject);
     	}
 
 	public void Damage(int damageAmount) {
-		maxHealth -= damageAmount;
+		maxHealth -= (damageAmount-defense);
 		Debug.Log("hit normal, remain blood: " + maxHealth);
 		if (maxHealth <= 0)
 		{
-			Destroy(gameObject);
+			isDead = true;
+			//Destroy(gameObject);
 		}
 	}
 

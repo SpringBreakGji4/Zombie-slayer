@@ -42,7 +42,7 @@ public class AdvZombie : MonoBehaviour
 			detectRange = 10f;
 			unsafeRange = 20f;
 			maxHealth = 100;
-			defense = 10;
+			defense = 4;
 			changeDirectionTime = 4f;
 		}
 		else if(zombie_mode == 4){
@@ -52,7 +52,7 @@ public class AdvZombie : MonoBehaviour
 			detectRange = 15f;
 			unsafeRange = 30f;
 			maxHealth = 200;
-			defense = 10;
+			defense = 5;
 			changeDirectionTime = 6f;
 		}
 		directionChangeTimer = changeDirectionTime;
@@ -64,16 +64,16 @@ public class AdvZombie : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, target.position);
 		if(isDead){
-				//anim.Play("Death");
+				StartCoroutine(Die());
 		}
 		else if(!isAttacking){
 			if(distance < unsafeRange){
 				if(zombie_mode == 3){
-					defense = 20;
+					defense = 8;
 					runSpeed = 7;
 				}
 				else if(zombie_mode == 4){
-					defense = 40;
+					defense = 10;
 					runSpeed = 10;
 				}
 				if (distance < attackRange){
@@ -117,11 +117,11 @@ public class AdvZombie : MonoBehaviour
 			}
 			else{
 				if(zombie_mode == 3){
-					defense = 20;
+					defense = 4;
 					runSpeed = 3;
 				}
 				else if(zombie_mode == 4){
-					defense = 40;
+					defense = 5;
 					runSpeed = 5;
 				}
 				directionChangeTimer -= Time.deltaTime;
@@ -163,12 +163,21 @@ public class AdvZombie : MonoBehaviour
 		isAttacking = false;
     }
 
+	IEnumerator Die(){
+       		// Play death animation or sound
+		anim.Play("Death");
+        	//yield return new WaitForSeconds(3f);
+        	yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+		Destroy(gameObject);
+    	}
+
 	public void Damage(int damageAmount) {
-		maxHealth -= damageAmount;
+		maxHealth -= (damageAmount-defense);
 		Debug.Log("hit adv, remain blood: " + maxHealth);
 		if (maxHealth <= 0)
 		{
-			Destroy(gameObject);
+			isDead = true;
+			//Destroy(gameObject);
 		}
 	}
 }
