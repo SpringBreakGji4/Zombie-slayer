@@ -4197,7 +4197,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25482
+  m_Name: pb_Mesh25470
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8770,12 +8770,12 @@ GameObject:
   - component: {fileID: 781585801}
   - component: {fileID: 781585800}
   m_Layer: 0
-  m_Name: roof
+  m_Name: roof 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &781585799
 Transform:
   m_ObjectHideFlags: 0
@@ -13299,7 +13299,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25276
+  m_Name: pb_Mesh25264
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14525,12 +14525,12 @@ GameObject:
   - component: {fileID: 1276883841}
   - component: {fileID: 1276883840}
   m_Layer: 0
-  m_Name: roof (1)
+  m_Name: roof 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1276883839
 Transform:
   m_ObjectHideFlags: 0
