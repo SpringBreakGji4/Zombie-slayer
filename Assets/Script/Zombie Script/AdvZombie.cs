@@ -5,8 +5,8 @@ using UnityEngine;
 public class AdvZombie : MonoBehaviour
 {
 
-	public GameObject zombie;
-	public int zombie_mode = 1;
+	//public GameObject zombie;
+	public int zombie_mode;
 
 	private float walkSpeed;
 	private float runSpeed;
@@ -24,6 +24,9 @@ public class AdvZombie : MonoBehaviour
 	//private bool isRage = false;
 	
 	private Transform target;
+	private Vector3 direction;
+	private Vector3 targetPosition;
+	private Vector3 randomDirection;
 	private float directionChangeTimer;
 	private Animator anim;
 
@@ -35,21 +38,21 @@ public class AdvZombie : MonoBehaviour
 		if(zombie_mode == 3){
 			//walkSpeed = 2.2f;
 			runSpeed = 7f;
-			attackRange = 1.5f;
+			attackRange = 3f;
 			detectRange = 10f;
 			unsafeRange = 20f;
 			maxHealth = 100;
-			//defense = 10;
-			changeDirectionTime = 6f;
+			defense = 4;
+			changeDirectionTime = 4f;
 		}
 		else if(zombie_mode == 4){
 			//walkSpeed = 2.2f;
 			runSpeed = 10f;
-			attackRange = 1.5f;
-			detectRange = 10f;
-			//unsafeRange = 20f;
-			maxHealth = 100;
-			//defense = 10;
+			attackRange = 3f;
+			detectRange = 15f;
+			unsafeRange = 30f;
+			maxHealth = 200;
+			defense = 5;
 			changeDirectionTime = 6f;
 		}
 		directionChangeTimer = changeDirectionTime;
@@ -60,42 +63,121 @@ public class AdvZombie : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, target.position);
-		if(!isAttacking){
-			if(isDead){
-				//anim.Play("Death");
-			}
-			else if(distance < unsafeRange){
+		if(isDead){
+				StartCoroutine(Die());
+		}
+		else if(!isAttacking){
+			if(distance < unsafeRange){
+				if(zombie_mode == 3){
+					defense = 8;
+					runSpeed = 7;
+				}
+				else if(zombie_mode == 4){
+					defense = 10;
+					runSpeed = 10;
+				}
 				if (distance < attackRange){
-					isAttacking = true;
-					//anim.Play("attack");
-					//isAttacking = false;
-					StartCoroutine(Attack());
+					if(zombie_mode == 3){
+						isAttacking = true;
+						StartCoroutine(Attack());
+					}
+					else{
+						StartCoroutine(Wait());
+					}
 				}
 				else if(distance < detectRange){
 					transform.LookAt(target);
-					if(zombie_mode == 3){
-						//anim.SetBool("isWalk",true);
-						//anim.Play("walk", -1, 0f);
-						anim.Play("walk");
-						transform.position += transform.forward * runSpeed * Time.deltaTime;
-					}
+					//anim.SetBool("isWalk",true);
+					//anim.Play("walk", -1, 0f);
+					anim.Play("walk");
+					transform.position += transform.forward * runSpeed * Time.deltaTime;
 					directionChangeTimer = changeDirectionTime;	
-        		}
+				}
 				else{
-					anim.CrossFade("Idle1", 0.1f);
+					directionChangeTimer -= Time.deltaTime;
+					if(directionChangeTimer >0 && directionChangeTimer <= changeDirectionTime/2){
+						randomDirection = new Vector3(0f, 0f, 0f).normalized;
+					}
+					else if(directionChangeTimer <= 0f){
+						randomDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+						directionChangeTimer = changeDirectionTime;
+					}
+					targetPosition = transform.position+randomDirection*runSpeed;
+					if(transform.position != targetPosition){
+							transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(randomDirection), Time.deltaTime * runSpeed);
+							transform.position = Vector3.MoveTowards(transform.position, targetPosition, runSpeed * Time.deltaTime);
+						//anim.CrossFade("walk", 0.1f);
+						anim.Play("walk");
+					}
+					else{
+						//anim.Play("Idle1");
+						anim.CrossFade("Idle1", 0.1f);
+					}
 				}
 			}
 			else{
-				anim.CrossFade("Idle", 0.1f);
+				if(zombie_mode == 3){
+					defense = 4;
+					runSpeed = 3;
+				}
+				else if(zombie_mode == 4){
+					defense = 5;
+					runSpeed = 5;
+				}
+				directionChangeTimer -= Time.deltaTime;
+				if(directionChangeTimer >0 && directionChangeTimer <= changeDirectionTime/2){
+					randomDirection = new Vector3(0f, 0f, 0f).normalized;
+				}
+				else if(directionChangeTimer <= 0f){
+					randomDirection = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f)).normalized;
+					directionChangeTimer = changeDirectionTime;
+				}
+				targetPosition = transform.position+randomDirection*runSpeed;
+				if(transform.position != targetPosition){
+						transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(randomDirection), Time.deltaTime * runSpeed);
+						transform.position = Vector3.MoveTowards(transform.position, targetPosition, runSpeed * Time.deltaTime);
+					//anim.CrossFade("walk", 0.1f);
+					anim.Play("walk");
+				}
+				else{
+					//anim.Play("Idle");
+					anim.CrossFade("Idle", 0.1f);
+				}
 			}
+			
 		}		
 		
     }
 	
-	IEnumerator Attack(){
+    IEnumerator Attack(){
 		anim.Play("attack");
 		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
-		yield return new WaitForSeconds(2*anim.GetCurrentAnimatorStateInfo(0).length);
+		yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
 		isAttacking = false;
     }
+		
+    IEnumerator Wait(){
+		anim.Play("Idle");
+		//Debug.Log(anim.GetCurrentAnimatorStateInfo(0).length);
+		yield return new WaitForSeconds(5*anim.GetCurrentAnimatorStateInfo(0).length);
+		isAttacking = false;
+    }
+
+	IEnumerator Die(){
+       		// Play death animation or sound
+		anim.Play("Death");
+        	//yield return new WaitForSeconds(3f);
+        	yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+		Destroy(gameObject);
+    	}
+
+	public void Damage(int damageAmount) {
+		maxHealth -= (damageAmount-defense);
+		Debug.Log("hit adv, remain blood: " + maxHealth);
+		if (maxHealth <= 0)
+		{
+			isDead = true;
+			//Destroy(gameObject);
+		}
+	}
 }
