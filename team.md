@@ -6,7 +6,7 @@
 - Matthew Chang
 - Chia-Hen Lee
 - YuChing Chang
-- Shut-Ting Hsu
+- Shuo-Ting Hsu
 ## Team member contribution:
 #### William Chang
 - Multiplayer function, using the Photon
