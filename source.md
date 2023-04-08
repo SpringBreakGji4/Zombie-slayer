@@ -6,6 +6,9 @@
 - Sound File 1: https://example.com/sound-file-1
 - Sound File 2: https://example.com/sound-file-2
 - Sound File 3: https://example.com/sound-file-3
+- Zombie asset 1: https://assetstore.unity.com/packages/3d/characters/ghoul-zombie-114531
+- Zombie asset 2: https://assetstore.unity.com/packages/3d/characters/monster-scavenger-191323
+- Zombie asset 3: https://assetstore.unity.com/packages/3d/characters/chibi-mummy-60462
 ## Third-Party SDKs and Open-Source Software
 - Photon: [https://www.photonengine.com/en-US/PUN](https://www.photonengine.com/en-US/PUN)
 
