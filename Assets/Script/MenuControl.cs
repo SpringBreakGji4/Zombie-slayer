@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuControl : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public GameObject difficultyMenu;
+    // public GameObject difficultyMenu;
     public bool isPaused = false;
     // Start is called before the first frame update
     void Start()
@@ -40,19 +40,19 @@ public class MenuControl : MonoBehaviour
         }
     }
 
-    public void ShowDifficulty()
-    {
-        difficultyMenu.SetActive(true);
-    }
+    // public void ShowDifficulty()
+    // {
+    //     difficultyMenu.SetActive(true);
+    // }
 
-    public void SelectDifficulty(int diff)
-    {
-        if (diff == 0)
-            Debug.Log("easy");
-        if (diff == 1)
-            Debug.Log("normal");
-        if (diff == 2)
-            Debug.Log("hard");
-        difficultyMenu.SetActive(false);
-    }
+    // public void SelectDifficulty(int diff)
+    // {
+    //     if (diff == 0)
+    //         Debug.Log("easy");
+    //     if (diff == 1)
+    //         Debug.Log("normal");
+    //     if (diff == 2)
+    //         Debug.Log("hard");
+    //     difficultyMenu.SetActive(false);
+    // }
 }

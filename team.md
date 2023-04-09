@@ -4,7 +4,7 @@
 ### Team member:
 - William Chang
 - Matthew Chang
-- Chia-Hen Lee
+- Chih-Hen Lee
 - YuChing Chang
 - Shuo-Ting Hsu
 ## Team member contribution:

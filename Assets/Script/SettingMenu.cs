@@ -6,6 +6,8 @@ public class SettingMenu : MonoBehaviour
 {
     public GameObject bgm;
     public GameObject settingMenuUI;
+    private string[] vol_arr = {"Muted", "Low", "Medium", "High"};
+    private int vol_idx = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,23 +17,44 @@ public class SettingMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        settingMenuUI.transform.Find("Panel/VolumeValue").GetComponent<TMPro.TextMeshProUGUI>().text = Mathf.Ceil(bgm.GetComponent<UnityEngine.AudioSource>().volume * 10).ToString();
+        settingMenuUI.transform.Find("Panel/VolumeValue").GetComponent<TMPro.TextMeshProUGUI>().text = vol_arr[vol_idx];
     }
     
     public void VolumeDown()
     {
-        float val = bgm.GetComponent<UnityEngine.AudioSource>().volume;
-        if (val == 0)
+        if (vol_idx == 0)
             return;
-        bgm.GetComponent<UnityEngine.AudioSource>().volume = val - 0.1f;
+        else if (vol_idx == 1){
+            bgm.GetComponent<UnityEngine.AudioSource>().volume = 0f;
+            vol_idx = 0;
+        }
+        else if (vol_idx == 2){
+            bgm.GetComponent<UnityEngine.AudioSource>().volume = 0.2f;
+            vol_idx = 1;
+        }
+        else{
+            bgm.GetComponent<UnityEngine.AudioSource>().volume = 0.5f;
+            vol_idx = 2;
+        }
+        
     }
 
     public void VolumeUp()
     {
-        float val = bgm.GetComponent<UnityEngine.AudioSource>().volume;
-        if (val == 1)
+        if (vol_idx == 3)
             return;
-        bgm.GetComponent<UnityEngine.AudioSource>().volume = val + 0.1f;
+        else if (vol_idx == 2){
+            bgm.GetComponent<UnityEngine.AudioSource>().volume = 1f;
+            vol_idx = 3;
+        }
+        else if (vol_idx == 1){
+            bgm.GetComponent<UnityEngine.AudioSource>().volume = 0.5f;
+            vol_idx = 2;
+        }
+        else{
+            bgm.GetComponent<UnityEngine.AudioSource>().volume = 0.2f;
+            vol_idx = 1;
+        }
     }
 
 }

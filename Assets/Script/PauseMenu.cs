@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using TMPro;
+using Photon.Realtime;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -19,40 +22,18 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // btnArr[idx].GetComponent<UnityEngine.UI.Selectable>().Select();
-        
-        // // if (Input.GetAxis("Horizontal") > 0)
-        // if (Input.GetKeyDown(KeyCode.S))
-        // {
-        //     idx = (idx + 1) % 4;
-        // }
-        // // if (Input.GetAxis("Horizontal") < 0)
-        // if (Input.GetKeyDown(KeyCode.W))
-        // {
-        //     if (idx == 0)
-        //         idx = 3;
-        //     else
-        //         idx--;
-        // }
-        // // if (Input.GetButtonDown("js5"))
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     if (idx == 0)
-        //     {
-        //         player.GetComponent<MenuControl>().Pause(false);
-        //     }
-        //     if (idx == 1)
-        //     {
-                
-        //     }
-        //     if (idx == 2)
-        //     {
-                
-        //     }
-        //     if (idx == 3)
-        //     {
-        //         Application.Quit();
-        //     }
-        // }
+
+    }
+
+    public void Restart()
+    {
+        Debug.Log("restart");
+        PhotonNetwork.LoadLevel(0);
+    }
+
+    public void Quit()
+    {
+        Debug.Log("quit");
+        Application.Quit();
     }
 }
