@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SettingMenu : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SettingMenu : MonoBehaviour
     public GameObject settingMenuUI;
     private string[] vol_arr = {"Muted", "Low", "Medium", "High"};
     private int vol_idx = 3;
+    public GameObject volumeDownBtn, settingBtn;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,4 +59,17 @@ public class SettingMenu : MonoBehaviour
         }
     }
 
+    public void ShowSettingMenu()
+    {
+        settingMenuUI.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(volumeDownBtn);
+    }
+
+    public void CloseSettingMenu()
+    {
+        settingMenuUI.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(settingBtn);
+    }
 }
