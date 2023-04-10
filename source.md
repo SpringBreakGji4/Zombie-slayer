@@ -1,6 +1,9 @@
 # Zombie Slayer - SOURCE
 ## Virtual Objects
 - Easy Weapons: [https://example.com/virtual-object-1](https://assetstore.unity.com/packages/templates/systems/easy-weapons-19365)
+- Zombie asset 1: https://assetstore.unity.com/packages/3d/characters/ghoul-zombie-114531
+- Zombie asset 2: https://assetstore.unity.com/packages/3d/characters/monster-scavenger-191323
+- Zombie asset 3: https://assetstore.unity.com/packages/3d/characters/chibi-mummy-60462
 ## Third-Party SDKs and Open-Source Software
 - Photon: [https://www.photonengine.com/en-US/PUN](https://www.photonengine.com/en-US/PUN)
 ## Icons
