@@ -22,7 +22,6 @@ Photon is a popular third-party SDK that provides a cloud-based multiplayer plat
 To use Photon in our project, we first downloaded and imported the Photon Unity Networking (PUN) package from the Unity Asset Store. We then configured our game objects and scripts to use Photon's network infrastructure to synchronize player movement, shooting, and zombie spawning across multiple devices in real-time. Photon's cloud-based server infrastructure also ensures reliable and low-latency multiplayer experiences for our users.
 
 ## Assets/textures for house
-- Furniture FREE Pack: https://assetstore.unity.com/packages/3d/props/furniture/furniture-free-pack-192628
 - PBR Texture Lib: https://assetstore.unity.com/packages/2d/textures-materials/pbr-texture-lib-82799
 - Hand Painted Seamless Wood Texture Vol - 6: https://assetstore.unity.com/packages/2d/textures-materials/wood/hand-painted-seamless-wood-texture-vol-6-162145
 - Voxel Functional Furniture FREE: https://assetstore.unity.com/packages/3d/props/furniture/voxel-functional-furniture-free-134903
