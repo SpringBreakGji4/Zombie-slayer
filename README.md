@@ -40,7 +40,7 @@ Our VR Shooting Game includes the following features:
 - Zombie will have basic AI to detect presence of players
 
 ## Demo
-Check out our demo video on YouTube: [Zombie-Slayer](http://youtube.com)
+Check out our demo video on YouTube: [[Zombie-Slayer](http://youtube.com)](https://youtu.be/OlfoB2LCkvI)
 
 ## Support
 If you experience any issues while playing the VR Shooting Game, please don't hesitate to contact us and give us any suggestions.
