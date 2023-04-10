@@ -4,7 +4,7 @@ Welcome to our VR Shooting Game! In this game, you'll have the opportunity to ex
 ## Requirements
 To play our VR Shooting Game, you'll need the following:
 
-- An Android phone with Android version 5.0 or higher
+- An Android phone with Android version 7.0 or higher
 - A Bluetooth controller compatible with your Android phone
 - Our game installed on your Android phone
 
