@@ -5,6 +5,7 @@ using Photon.Pun;
 using TMPro;
 using Photon.Realtime;
 using System.Linq;
+using UnityEngine.EventSystems;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -19,6 +20,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject PlayerListItemPrefab;
     [SerializeField] GameObject startGameButton;
     [SerializeField] private string randomRoomName;
+    [SerializeField] GameObject e;
     void Awake()
     {
         Instance = this;
@@ -26,6 +28,8 @@ public class Launcher : MonoBehaviourPunCallbacks
     
     void Start()
     {
+        e.GetComponent<StandaloneInputModule>().enabled = true;
+        e.GetComponent<XRCardboardInputModule>().enabled = false;
         Debug.Log("Connecting to the master");
         PhotonNetwork.ConnectUsingSettings();
     }

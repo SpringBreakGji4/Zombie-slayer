@@ -6,9 +6,10 @@ using UnityEngine.EventSystems;
 public class MenuControl : MonoBehaviour
 {
     public GameObject pauseMenu;
-    // public GameObject difficultyMenu;
     public bool isPaused = false;
     public GameObject resume;
+    public GameObject e;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +36,16 @@ public class MenuControl : MonoBehaviour
             Time.timeScale = 0f;
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(resume);
+            e.GetComponent<StandaloneInputModule>().enabled = true;
+            e.GetComponent<XRCardboardInputModule>().enabled = false;
         }
         else
         {
             pauseMenu.SetActive(false);
             isPaused = false;
             Time.timeScale = 1f;
+            e.GetComponent<StandaloneInputModule>().enabled = false;
+            e.GetComponent<XRCardboardInputModule>().enabled = true;
         }
     }
 
