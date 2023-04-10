@@ -22,7 +22,7 @@ To get started with the VR Shooting Game, follow these steps:
 ## How to Play
 In the VR Shooting Game, you'll be playing the role of a survivor fighting against a bunch of zombies. You'll need to use your Bluetooth controller's "OK" button to shoot, while using your head movement to aim. 
 
-The “up” and “down” of buttons of the controller can be used to navigate the menu items. When the “B” is pressed, the menu item will be selected.
+The “up” and “down” of buttons of the controller can be used to navigate the menu items. When the “OK” is pressed, the menu item will be selected.
 
 As you progress through the game, you'll encounter different types of zombies with unique abilities, strengths, and weaknesses. You'll have access to a variety of weapons, such as pistols, shotguns, and rifles, to help you defeat the zombies.
 
