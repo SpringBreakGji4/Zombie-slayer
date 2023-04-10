@@ -17580,7 +17580,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25530
+  m_Name: pb_Mesh39642
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20870,7 +20870,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 67d6531221bb4c442877940fcc060ec8, type: 2}
   - {fileID: 2100006, guid: bd232805ec57aa245a81c2df3f69f66a, type: 3}
   - {fileID: 2100000, guid: 71e8951740b2a224480948e4515f6e2f, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8916d8bddc1cdff41aeb26b5f625aa20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
