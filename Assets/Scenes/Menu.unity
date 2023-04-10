@@ -2718,6 +2718,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 839058636}
     m_Modifications:
+    - target: {fileID: 7287137019966064016, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
+      propertyPath: vrInputModule
+      value: 
+      objectReference: {fileID: 825573257}
     - target: {fileID: 7287137019966064017, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2792,6 +2796,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7287137020585607025, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
   m_PrefabInstance: {fileID: 825573252}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &825573257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7287137020585607021, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
+  m_PrefabInstance: {fileID: 825573252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825573256}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbad1c580bb6cf4face9c289b0cb7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &839058633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,6 +2818,7 @@ GameObject:
   - component: {fileID: 839058636}
   - component: {fileID: 839058635}
   - component: {fileID: 839058634}
+  - component: {fileID: 839058637}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -2859,6 +2875,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &839058637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839058633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab304cf60b31904a817504f90c99f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  e: {fileID: 825573256}
 --- !u!1 &977737595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3877,7 +3906,6 @@ MonoBehaviour:
   PlayerListItemPrefab: {fileID: 3711084645194089859, guid: fc63fc808aeb2441985be40791ea804c, type: 3}
   startGameButton: {fileID: 740442831}
   randomRoomName: 
-  e: {fileID: 825573256}
 --- !u!114 &1308740582
 MonoBehaviour:
   m_ObjectHideFlags: 0
