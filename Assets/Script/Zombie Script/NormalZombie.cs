@@ -43,7 +43,7 @@ public class NormalZombie : MonoBehaviour
 			runSpeed = 1.5f;
 			attackRange = 3f;
 			detectRange = 20f;
-			maxHealth = 100;
+			maxHealth = 50;
 			defense = 2;
 			changeDirectionTime = 6f;
 		}
@@ -52,7 +52,7 @@ public class NormalZombie : MonoBehaviour
 			runSpeed = 6f;
 			attackRange = 3f;
 			detectRange = 20f;
-			maxHealth = 100;
+			maxHealth = 50;
 			defense = 3;
 			changeDirectionTime = 6f;
 		}

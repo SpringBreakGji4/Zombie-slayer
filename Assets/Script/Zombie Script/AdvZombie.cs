@@ -41,7 +41,7 @@ public class AdvZombie : MonoBehaviour
 			attackRange = 5f;
 			detectRange = 30f;
 			unsafeRange = 40f;
-			maxHealth = 100;
+			maxHealth = 50;
 			defense = 4;
 			changeDirectionTime = 4f;
 		}
@@ -51,7 +51,7 @@ public class AdvZombie : MonoBehaviour
 			attackRange = 3f;
 			detectRange = 30f;
 			unsafeRange = 40f;
-			maxHealth = 200;
+			maxHealth = 100;
 			defense = 5;
 			changeDirectionTime = 6f;
 		}
