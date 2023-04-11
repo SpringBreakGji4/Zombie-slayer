@@ -45,11 +45,11 @@ public class PlayerShoot : MonoBehaviour
             NormalZombie normalZombie = hit.transform.GetComponent<NormalZombie>();
             AdvZombie advZombie = hit.transform.GetComponent<AdvZombie>();       
 
-            if (normalZombie != null){
+            if (normalZombie != null && normalZombie.maxHealth > 0){
                 normalZombie.Damage(10);
             }   
 
-            if (advZombie != null){
+            if (advZombie != null && advZombie.maxHealth > 0){
                 advZombie.Damage(10);
             }      
             
