@@ -48,7 +48,7 @@ public class Timer : MonoBehaviour
             result.text = "You Win!";
             gameinfo.SetActive(false);
             EndGame();
-            zombieNum = 1;
+            zombieNum = 11;
         }
 
         timeText.text = ((int)timeValue).ToString();
