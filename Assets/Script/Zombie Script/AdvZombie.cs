@@ -24,17 +24,26 @@ public class AdvZombie : MonoBehaviour
 	//private bool isRage = false;
 	
 	private Transform target;
+	private Transform target_projector;
+	private Vector3 ori;
 	private Vector3 direction;
 	private Vector3 targetPosition;
 	private Vector3 randomDirection;
 	private float directionChangeTimer;
 	private Animator anim;
+	private float zombieReactTimer;
+	private float reactTimer;
+
 
     // Start is called before the first frame update
     void Start()
     {
 		target = GameObject.FindGameObjectWithTag("Player").transform;
-        anim = GetComponentInChildren<Animator>();
+		//ori = transform.position;
+        //target_projector = Instantiate(target, Vector3.zero, Quaternion.identity);
+		//target_projector.position = new Vector3(target_projector.position.x,transform.position.y ,target_projector.position.z);
+
+		anim = GetComponentInChildren<Animator>();
 		if(zombie_mode == 3){
 			//walkSpeed = 2.2f;
 			runSpeed = 7f;
@@ -44,6 +53,7 @@ public class AdvZombie : MonoBehaviour
 			maxHealth = 50;
 			defense = 4;
 			changeDirectionTime = 4f;
+			reactTimer = 0.5f;
 		}
 		else if(zombie_mode == 4){
 			//walkSpeed = 2.2f;
@@ -54,27 +64,34 @@ public class AdvZombie : MonoBehaviour
 			maxHealth = 100;
 			defense = 5;
 			changeDirectionTime = 6f;
+			reactTimer = 0.5f;
 		}
 		directionChangeTimer = changeDirectionTime;
+		zombieReactTimer = reactTimer;
 		currentHealth = maxHealth;
     }
-
+//67
     // Update is called once per frame
     void Update()
     {
+		//target_projector.position = new Vector3(target.position.x, transform.position.y,target.position.z);
+		//target_projector.position.x = target.position.x;
+		//target_projector.position.z = target.position.z;
         float distance = Vector3.Distance(transform.position, target.position);
+		//float distance = Vector3.Distance(transform.position, targetPosition);
+		//float distance = Vector3.Distance(transform.position, target_projector.position);
 		if(isDead){
 				StartCoroutine(Die());
 		}
 		else if(!isAttacking){
 			if(distance < unsafeRange){
 				if(zombie_mode == 3){
-					defense = 8;
+					defense = 6;
 					runSpeed = 7;
 				}
 				else if(zombie_mode == 4){
-					defense = 10;
-					runSpeed = 10;
+					defense = 8;
+					runSpeed = 8;
 				}
 				if (distance < attackRange){
 					if(zombie_mode == 3){
@@ -86,7 +103,13 @@ public class AdvZombie : MonoBehaviour
 					}
 				}
 				else if(distance < detectRange){
-					transform.LookAt(target);
+					zombieReactTimer -= Time.deltaTime;
+					if(zombieReactTimer <= 0f){
+						transform.LookAt(target);
+						zombieReactTimer = reactTimer;
+					}
+					
+					//transform.LookAt(target_projector);
 					//anim.SetBool("isWalk",true);
 					//anim.Play("walk", -1, 0f);
 					anim.Play("walk");
