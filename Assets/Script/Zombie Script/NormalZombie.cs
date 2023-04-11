@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NormalZombie : MonoBehaviour
 {
-	
+	public GameObject timer;
 	public GameObject zombie;
 	//public GameObject Plane;
 	public LayerMask obstacleLayer;
@@ -14,7 +14,7 @@ public class NormalZombie : MonoBehaviour
 	private float runSpeed;
     	private float attackRange;
 	private float detectRange;
-	private int maxHealth;
+	public int maxHealth;
 	private int defense;
 	private float changeDirectionTime;
 
@@ -43,7 +43,7 @@ public class NormalZombie : MonoBehaviour
 			runSpeed = 1.5f;
 			attackRange = 3f;
 			detectRange = 20f;
-			maxHealth = 100;
+			maxHealth = 50;
 			defense = 2;
 			changeDirectionTime = 6f;
 		}
@@ -52,7 +52,7 @@ public class NormalZombie : MonoBehaviour
 			runSpeed = 6f;
 			attackRange = 3f;
 			detectRange = 20f;
-			maxHealth = 100;
+			maxHealth = 50;
 			defense = 3;
 			changeDirectionTime = 6f;
 		}
@@ -169,11 +169,15 @@ public class NormalZombie : MonoBehaviour
     	}
 
 	public void Damage(int damageAmount) {
+		timer = GameObject.Find("Timer");
+		Timer timerscript = timer.GetComponent<Timer>();
+
 		maxHealth -= (damageAmount-defense);
 		Debug.Log("hit normal, remain blood: " + maxHealth);
 		if (maxHealth <= 0)
 		{
 			isDead = true;
+			timerscript.zombieNum -= 1;
 			//Destroy(gameObject);
 		}
 	}

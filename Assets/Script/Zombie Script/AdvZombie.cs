@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AdvZombie : MonoBehaviour
 {
-
+	public GameObject timer;
 	//public GameObject zombie;
 	public int zombie_mode;
 
@@ -13,7 +13,7 @@ public class AdvZombie : MonoBehaviour
  	private float attackRange;
 	private float unsafeRange;
 	private float detectRange;
-	private int maxHealth;
+	public int maxHealth;
 	private int defense;
 	private float changeDirectionTime;
 
@@ -41,7 +41,7 @@ public class AdvZombie : MonoBehaviour
 			attackRange = 5f;
 			detectRange = 30f;
 			unsafeRange = 40f;
-			maxHealth = 100;
+			maxHealth = 50;
 			defense = 4;
 			changeDirectionTime = 4f;
 		}
@@ -51,7 +51,7 @@ public class AdvZombie : MonoBehaviour
 			attackRange = 3f;
 			detectRange = 30f;
 			unsafeRange = 40f;
-			maxHealth = 200;
+			maxHealth = 100;
 			defense = 5;
 			changeDirectionTime = 6f;
 		}
@@ -172,11 +172,15 @@ public class AdvZombie : MonoBehaviour
     	}
 
 	public void Damage(int damageAmount) {
+		timer = GameObject.Find("Timer");
+		Timer timerscript = timer.GetComponent<Timer>();
+
 		maxHealth -= (damageAmount-defense);
 		Debug.Log("hit adv, remain blood: " + maxHealth);
 		if (maxHealth <= 0)
 		{
 			isDead = true;
+			timerscript.zombieNum -= 1;
 			//Destroy(gameObject);
 		}
 	}

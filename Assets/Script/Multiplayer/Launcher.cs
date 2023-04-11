@@ -19,6 +19,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject PlayerListItemPrefab;
     [SerializeField] GameObject startGameButton;
     [SerializeField] private string randomRoomName;
+
     void Awake()
     {
         Instance = this;

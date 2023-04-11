@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MenuControl : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public GameObject difficultyMenu;
     public bool isPaused = false;
+    public GameObject resume;
+    public GameObject e;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +19,7 @@ public class MenuControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)){
+        if (Input.GetButtonDown("js11")){
             if (isPaused)
                 Pause(false);
             else
@@ -31,28 +34,20 @@ public class MenuControl : MonoBehaviour
             pauseMenu.SetActive(true);
             isPaused = true;
             Time.timeScale = 0f;
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(resume);
+            e.GetComponent<StandaloneInputModule>().enabled = true;
+            e.GetComponent<XRCardboardInputModule>().enabled = false;
         }
         else
         {
             pauseMenu.SetActive(false);
             isPaused = false;
             Time.timeScale = 1f;
+            e.GetComponent<StandaloneInputModule>().enabled = false;
+            e.GetComponent<XRCardboardInputModule>().enabled = true;
         }
     }
 
-    public void ShowDifficulty()
-    {
-        difficultyMenu.SetActive(true);
-    }
 
-    public void SelectDifficulty(int diff)
-    {
-        if (diff == 0)
-            Debug.Log("easy");
-        if (diff == 1)
-            Debug.Log("normal");
-        if (diff == 2)
-            Debug.Log("hard");
-        difficultyMenu.SetActive(false);
-    }
 }

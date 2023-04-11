@@ -4,7 +4,7 @@ Welcome to our VR Shooting Game! In this game, you'll have the opportunity to ex
 ## Requirements
 To play our VR Shooting Game, you'll need the following:
 
-- An Android phone with Android version 5.0 or higher
+- An Android phone with Android version 7.0 or higher
 - A Bluetooth controller compatible with your Android phone
 - Our game installed on your Android phone
 
@@ -22,7 +22,7 @@ To get started with the VR Shooting Game, follow these steps:
 ## How to Play
 In the VR Shooting Game, you'll be playing the role of a survivor fighting against a bunch of zombies. You'll need to use your Bluetooth controller's "OK" button to shoot, while using your head movement to aim. 
 
-The “up” and “down” of buttons of the controller can be used to navigate the menu items. When the “B” is pressed, the menu item will be selected.
+The “up” and “down” of buttons of the controller can be used to navigate the menu items. When the “OK” is pressed, the menu item will be selected.
 
 As you progress through the game, you'll encounter different types of zombies with unique abilities, strengths, and weaknesses. You'll have access to a variety of weapons, such as pistols, shotguns, and rifles, to help you defeat the zombies.
 
@@ -40,7 +40,7 @@ Our VR Shooting Game includes the following features:
 - Zombie will have basic AI to detect presence of players
 
 ## Demo
-Check out our demo video on YouTube: [Zombie-Slayer](http://youtube.com)
+Check out our demo video on YouTube: https://youtu.be/KASMil0u0GM
 
 ## Support
 If you experience any issues while playing the VR Shooting Game, please don't hesitate to contact us and give us any suggestions.
