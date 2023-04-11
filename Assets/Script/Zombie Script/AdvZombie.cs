@@ -29,33 +29,38 @@ public class AdvZombie : MonoBehaviour
 	private Vector3 randomDirection;
 	private float directionChangeTimer;
 	private Animator anim;
+	private float zombieReactTimer;
+	private float reactTime;
 
     // Start is called before the first frame update
     void Start()
     {
 		target = GameObject.FindGameObjectWithTag("Player").transform;
-        anim = GetComponentInChildren<Animator>();
+        	anim = GetComponentInChildren<Animator>();
 		if(zombie_mode == 3){
 			//walkSpeed = 2.2f;
-			runSpeed = 7f;
+			runSpeed = 5f;
 			attackRange = 5f;
 			detectRange = 30f;
 			unsafeRange = 40f;
 			maxHealth = 50;
 			defense = 4;
 			changeDirectionTime = 4f;
+			reactTime = 0.5f;
 		}
 		else if(zombie_mode == 4){
 			//walkSpeed = 2.2f;
-			runSpeed = 10f;
+			runSpeed = 5f;
 			attackRange = 3f;
 			detectRange = 30f;
 			unsafeRange = 40f;
 			maxHealth = 100;
-			defense = 5;
+			defense = 4;
 			changeDirectionTime = 6f;
+			reactTime = 0.5f;
 		}
 		directionChangeTimer = changeDirectionTime;
+		zombieReactTimer = reactTime;
 		currentHealth = maxHealth;
     }
 
@@ -63,18 +68,19 @@ public class AdvZombie : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, target.position);
+		Debug.Log(target.position);
 		if(isDead){
 				StartCoroutine(Die());
 		}
 		else if(!isAttacking){
 			if(distance < unsafeRange){
 				if(zombie_mode == 3){
-					defense = 8;
+					defense = 6;
 					runSpeed = 7;
 				}
 				else if(zombie_mode == 4){
-					defense = 10;
-					runSpeed = 10;
+					defense = 8;
+					runSpeed = 8;
 				}
 				if (distance < attackRange){
 					if(zombie_mode == 3){
@@ -86,6 +92,12 @@ public class AdvZombie : MonoBehaviour
 					}
 				}
 				else if(distance < detectRange){
+					/*zombieReactTimer -= Time.deltaTime;
+					if(directionChangeTimer <= 0f){
+						transform.LookAt(target);
+						zombieReactTimer = reactTime;
+					}*/
+	
 					transform.LookAt(target);
 					//anim.SetBool("isWalk",true);
 					//anim.Play("walk", -1, 0f);
