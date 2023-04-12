@@ -27,13 +27,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        Debug.Log("restart");
         PhotonNetwork.LoadLevel(0);
     }
 
     public void Quit()
     {
-        Debug.Log("quit");
         Application.Quit();
     }
 }

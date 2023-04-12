@@ -11,12 +11,14 @@ public class Timer : MonoBehaviour
     public int zombieNum;
     public GameObject e;
     public GameObject restartMenu, restart;
+    public GameObject gameinfo;
 
     // Start is called before the first frame update
     void Start()
     {
         zombieNum = 11;
-        timeValue = 90;
+        //timeValue = 90;
+	timeValue = 300;
     }
 
     // Update is called once per frame
@@ -35,16 +37,19 @@ public class Timer : MonoBehaviour
                 // Debug.Log("Win!");
                 result.text = "You Win!";
             }
+
+            gameinfo.SetActive(false);
             EndGame();
-            zombieNum = 1;
+            zombieNum = 11;
         }
 
         if (zombieNum <= 0)
         {
             // Debug.Log("Win!");
             result.text = "You Win!";
+            gameinfo.SetActive(false);
             EndGame();
-            zombieNum = 1;
+            zombieNum = 11;
         }
 
         timeText.text = ((int)timeValue).ToString();
