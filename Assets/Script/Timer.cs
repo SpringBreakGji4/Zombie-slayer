@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
     {
         zombieNum = 11;
         //timeValue = 90;
-	timeValue = 180;
+	timeValue = 300;
     }
 
     // Update is called once per frame
