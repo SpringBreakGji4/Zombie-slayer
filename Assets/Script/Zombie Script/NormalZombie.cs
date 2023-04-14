@@ -9,6 +9,7 @@ public class NormalZombie : MonoBehaviour
 	//public GameObject Plane;
 	public LayerMask obstacleLayer;
 	public int zombie_mode = 1;
+	public int attack;
 
 	private float walkSpeed;
 	private float runSpeed;
@@ -39,21 +40,23 @@ public class NormalZombie : MonoBehaviour
 		boxCollider = GetComponent<BoxCollider>();
 
 		if(zombie_mode == 1){
-			walkSpeed = 1.5f;
+			walkSpeed = 3f;
 			runSpeed = 3f;
 			attackRange = 3f;
 			detectRange = 30f;
 			maxHealth = 50;
 			defense = 2;
+			attack = 5;
 			changeDirectionTime = 6f;
 		}
 		else if(zombie_mode == 2){
 			walkSpeed = 2.2f;
-			runSpeed = 6f;
+			runSpeed = 7f;
 			attackRange = 3f;
 			detectRange = 40f;
 			maxHealth = 50;
 			defense = 3;
+			attack = 8;
 			changeDirectionTime = 6f;
 		}
 
