@@ -3067,6 +3067,137 @@ Transform:
   m_Father: {fileID: 447551317}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1001 &84686407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_Name
+      value: Titan
+      objectReference: {fileID: 0}
+    - target: {fileID: 100082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_RootOrder
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 163.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.006388259
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9999796
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 400082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0f8e12c3a0ebc4aeaa389bc76483d1ad, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+--- !u!1 &84686408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100082, guid: 24c4300f68c986241af51004b72b03f2, type: 3}
+  m_PrefabInstance: {fileID: 84686407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &84686409
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84686408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2.711563, z: 2}
+  m_Center: {x: 0, y: 1.340384, z: 0}
+--- !u!114 &84686410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84686408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95806a88f0d74f308da53a42f8673e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  zombie_mode: 5
+  attack: 0
+  maxHealth: 0
+--- !u!54 &84686411
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84686408}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
+  m_CollisionDetection: 0
 --- !u!1001 &87773259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3665,6 +3796,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 2
+  attack: 0
   maxHealth: 0
 --- !u!65 &122047027
 BoxCollider:
@@ -4070,6 +4202,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!65 &147708468
 BoxCollider:
@@ -5408,6 +5541,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!65 &258956231
 BoxCollider:
@@ -13008,6 +13142,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 2
+  attack: 0
   maxHealth: 0
 --- !u!65 &581420462
 BoxCollider:
@@ -14845,6 +14980,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!64 &649711411
 MeshCollider:
@@ -17714,6 +17850,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!64 &832068337
 MeshCollider:
@@ -18078,6 +18215,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 2
+  attack: 0
   maxHealth: 0
 --- !u!65 &857279323
 BoxCollider:
@@ -22980,6 +23118,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 2
+  attack: 0
   maxHealth: 0
 --- !u!65 &1129210997
 BoxCollider:
@@ -23047,6 +23186,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!65 &1129271254
 BoxCollider:
@@ -23237,6 +23377,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!65 &1145286455
 BoxCollider:
@@ -23743,6 +23884,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!65 &1166164487
 BoxCollider:
@@ -24167,6 +24309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 4
+  attack: 0
   maxHealth: 0
 --- !u!65 &1178271878
 BoxCollider:
@@ -25126,6 +25269,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!65 &1241825431
 BoxCollider:
@@ -29564,6 +29708,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!64 &1432273693
 MeshCollider:
@@ -30671,6 +30816,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!65 &1474015983
 BoxCollider:
@@ -31068,6 +31214,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 2
+  attack: 0
   maxHealth: 0
 --- !u!54 &1498945400
 Rigidbody:
@@ -31946,6 +32093,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!64 &1556182963
 MeshCollider:
@@ -32517,6 +32665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 3
+  attack: 0
   maxHealth: 0
 --- !u!4 &1581169381 stripped
 Transform:
@@ -42190,6 +42339,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zombie_mode: 1
+  attack: 0
   maxHealth: 0
 --- !u!65 &1683685552
 BoxCollider:
@@ -51975,6 +52125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 4
+  attack: 0
   maxHealth: 0
 --- !u!1 &2109431427
 GameObject:
