@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        zombieNum = 11;
+        zombieNum = 20;
         //timeValue = 90;
 	timeValue = 300;
     }
