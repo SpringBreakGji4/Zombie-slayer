@@ -41,8 +41,8 @@ public class AdvZombie : MonoBehaviour
 			//walkSpeed = 2.2f;
 			runSpeed = 5f;
 			attackRange = 5f;
-			detectRange = 20f;
-			unsafeRange = 40f;
+			detectRange = 30f;
+			unsafeRange = 70f;
 			maxHealth = 50;
 			defense = 4;
 			changeDirectionTime = 4f;
@@ -53,7 +53,7 @@ public class AdvZombie : MonoBehaviour
 			runSpeed = 5f;
 			attackRange = 3f;
 			detectRange = 30f;
-			unsafeRange = 40f;
+			unsafeRange = 50f;
 			maxHealth = 50;
 			defense = 4;
 			changeDirectionTime = 6f;
@@ -186,7 +186,7 @@ public class AdvZombie : MonoBehaviour
 	public void Damage(int damageAmount) {
 		timer = GameObject.Find("Timer");
 		Timer timerscript = timer.GetComponent<Timer>();
-
+		detectRange = 100f;
 		maxHealth -= (damageAmount-defense);
 		Debug.Log("hit adv, remain blood: " + maxHealth);
 		if (maxHealth <= 0)
