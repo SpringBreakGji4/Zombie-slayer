@@ -19,7 +19,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject PlayerListItemPrefab;
     [SerializeField] GameObject startGameButton;
     [SerializeField] private string randomRoomName;
-
+    
     void Awake()
     {
         Instance = this;
@@ -49,11 +49,13 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
+        randomRoomName = "Room" + Random.Range(1, 999).ToString();
+        /*
         if (string.IsNullOrEmpty(roomNameInputField.text))
         {
             return;
-        }
-        PhotonNetwork.CreateRoom(roomNameInputField.text);
+        }*/
+        PhotonNetwork.CreateRoom(randomRoomName);
         MenuManager.Instance.OpenMenu("loading");
     }
 
