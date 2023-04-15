@@ -5,14 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 8d6f7f436e531408fb76d8fdab054722
   - enabled: 1
-    path: Assets/Scenes/(matthew) tunnel 1.unity
-    guid: 3c7f2b5180a6c5644ace9eca821d1e75
-  - enabled: 1
     path: Assets/Scenes/(William) voice chat.unity
     guid: 19d9a3aec696545d49561416ad1c4c9f
+  - enabled: 1
+    path: Assets/Scenes/(matthew) tunnel 1.unity
+    guid: 3c7f2b5180a6c5644ace9eca821d1e75
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cad13017477fc43d99ff430df1c76bcb, type: 2}
