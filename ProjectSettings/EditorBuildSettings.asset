@@ -11,8 +11,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zombie-Slayer.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/(experiment) house 2.unity
-    guid: a52d87f5943fd4ac987486da61959311
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cad13017477fc43d99ff430df1c76bcb, type: 2}

@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
         if(!PV.IsMine)
         {
             Debug.Log("Destroy");
-            Destroy(GetComponentInChildren<Camera>().gameObject); //without this, player will below the ground
-            Destroy(rb);
+            //Destroy(GetComponentInChildren<Camera>().gameObject); //without this, player will below the ground
+            //Destroy(rb);
         }
     }
 
