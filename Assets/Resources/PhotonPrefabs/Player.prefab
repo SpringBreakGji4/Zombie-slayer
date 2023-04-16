@@ -518,7 +518,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7287137019065901088, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7287137019806045175, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
       propertyPath: defaultColor.b
