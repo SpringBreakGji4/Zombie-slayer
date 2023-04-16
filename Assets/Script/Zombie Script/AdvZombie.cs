@@ -84,7 +84,7 @@ public class AdvZombie : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, target.position);
-		Debug.Log(target.position);
+		//Debug.Log(target.position);
 		if(isDead){
 				StartCoroutine(Die());
 		}
