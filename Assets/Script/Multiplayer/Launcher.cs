@@ -35,7 +35,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connected to Master");
         PhotonNetwork.JoinLobby();
-        //Debug.Log("We are now connected to the " + PhotonNetwork.CloudRegion + " server!");
+        Debug.Log("We are now connected to the " + PhotonNetwork.CloudRegion + " server!");
         PhotonNetwork.AutomaticallySyncScene = true; // Automatically load scene for all the client but not just host loaded 
     }
 

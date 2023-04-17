@@ -4087,7 +4087,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7287137019966064016, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7287137019966064016, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
       propertyPath: vrInputModule
