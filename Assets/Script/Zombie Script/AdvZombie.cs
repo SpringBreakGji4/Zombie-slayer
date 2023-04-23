@@ -5,40 +5,57 @@ using UnityEngine;
 public class AdvZombie : MonoBehaviour
 {
 	public GameObject timer;
-	//public GameObject zombie;
-	public int zombie_mode;
-	public int attack;
+	private Animator anim;
 
+	// Zombie attribute
+	public int zombie_mode;
 	private float walkSpeed;
 	private float runSpeed;
  	private float attackRange;
 	private float unsafeRange;
 	private float detectRange;
 	public int maxHealth;
+	public int attack;
 	private int defense;
 	private float changeDirectionTime;
+	private float reactTime;
 
-
-	//private int currentHealth;
+	// Zombie behavior
 	private bool isDead = false;
 	private bool isAttacking = false;
 	private bool isRage = true;
+	private int attackCount = 0;
 	
-	private Transform target;
+	// Player List
+	//private Transform target;
+	private List<Transform> target = new List<Transform>();
+	private Transform curTarget;
+
+	// Position variable
 	private Vector3 direction;
 	private Vector3 targetPosition;
 	private Vector3 randomDirection;
+
+	// Timer
 	private float directionChangeTimer;
-	private Animator anim;
 	private float zombieReactTimer;
-	private float reactTime;
-	private int attackCount = 0;
+	
+	
 
     // Start is called before the first frame update
     void Start()
     {
-		target = GameObject.FindGameObjectWithTag("Player").transform;
-        	anim = GetComponentInChildren<Animator>();
+		//target = GameObject.FindGameObjectWithTag("Player").transform;
+        	GameObject[] playerObjs = GameObject.FindGameObjectsWithTag("Player");
+		
+		foreach (GameObject player in playerObjs){
+			//Debug.Log("Player is : "+player);
+            target.Add(player.transform);
+        }
+		//Debug.Log("Player number : "+target.Count);
+		anim = GetComponentInChildren<Animator>();
+
+
 		if(zombie_mode == 3){
 			//walkSpeed = 2.2f;
 			runSpeed = 5f;
@@ -75,6 +92,8 @@ public class AdvZombie : MonoBehaviour
 			changeDirectionTime = 2f;
 			reactTime = 0.5f;
 		}
+
+
 		directionChangeTimer = changeDirectionTime;
 		zombieReactTimer = reactTime;
 		//currentHealth = maxHealth;
@@ -83,13 +102,24 @@ public class AdvZombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, target.position);
-		Debug.Log(target.position);
+		float curDistance = Mathf.Infinity;
+        	foreach (Transform player in target){
+            float distance = Vector3.Distance(transform.position, player.position);
+            if (distance < curDistance){
+                curDistance = distance;
+                curTarget = player;
+            }
+        }
+		
+        //float distance = Vector3.Distance(transform.position, target.position);
+		//Debug.Log(target.position);
+		
+
 		if(isDead){
 				StartCoroutine(Die());
 		}
 		else if(!isAttacking){
-			if(distance < unsafeRange){
+			if(curDistance < unsafeRange){
 				if(zombie_mode == 3){
 					defense = 5;
 					runSpeed = 7;
@@ -98,7 +128,7 @@ public class AdvZombie : MonoBehaviour
 					defense = 6;
 					runSpeed = 8;
 				}
-				if (distance < attackRange){
+				if (curDistance < attackRange){
 					isAttacking = true;
 					if(zombie_mode == 3){
 						StartCoroutine(Attack());
@@ -122,14 +152,14 @@ public class AdvZombie : MonoBehaviour
 						StartCoroutine(Wait());
 					}
 				}
-				else if(distance < detectRange){
+				else if(curDistance < detectRange){
 					/*zombieReactTimer -= Time.deltaTime;
 					if(directionChangeTimer <= 0f){
 						transform.LookAt(target);
 						zombieReactTimer = reactTime;
 					}*/
 	
-					transform.LookAt(target);
+					transform.LookAt(curTarget);
 					//anim.SetBool("isWalk",true);
 					//anim.Play("walk", -1, 0f);
 					anim.Play("walk");
@@ -148,8 +178,8 @@ public class AdvZombie : MonoBehaviour
 					}
 					targetPosition = transform.position+randomDirection*runSpeed;
 					if(transform.position != targetPosition){
-							transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(randomDirection), Time.deltaTime * runSpeed);
-							transform.position = Vector3.MoveTowards(transform.position, targetPosition, runSpeed * Time.deltaTime);
+						transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(randomDirection), Time.deltaTime * runSpeed);
+						transform.position = Vector3.MoveTowards(transform.position, targetPosition, runSpeed * Time.deltaTime);
 						//anim.CrossFade("walk", 0.1f);
 						anim.Play("walk");
 					}
