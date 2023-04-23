@@ -5,39 +5,51 @@ using UnityEngine;
 public class NormalZombie : MonoBehaviour
 {
 	public GameObject timer;
-	public GameObject zombie;
-	//public GameObject Plane;
-	public LayerMask obstacleLayer;
-	public int zombie_mode = 1;
-	public int attack;
+	private Animation anim;
 
+	// Zombie attribute
+	public int zombie_mode;
 	private float walkSpeed;
 	private float runSpeed;
     	private float attackRange;
 	private float detectRange;
 	public int maxHealth;
+	public int attack;
 	private int defense;
 	private float changeDirectionTime;
 
-	private int currentHealth;
+	// Zombie behavior
 	private bool isDead = false;
 	private bool isAttacking = false;
-	private Transform target;
-	private Transform tem_target;
+
+	// Player List
+	//private Transform target;
+	private List<Transform> target  = new List<Transform>();
+	private Transform curTarget;
+
+	// Position variable	
 	private Vector3 direction;
 	private Vector3 targetPosition;
-	private Rigidbody rb; 
-	private Animation anim;
 	private Vector3 randomDirection;
+
+	// Timer
 	private float directionChangeTimer;
-	private BoxCollider boxCollider;
+
+
 
     	// Start is called before the first frame update
     	void Start(){
-        	target = GameObject.FindGameObjectWithTag("Player").transform;
-		//tem_target = Instantiate(target, target.position, target.rotation);
+        	//target = GameObject.FindGameObjectWithTag("Player").transform;
+
+
+		GameObject[] playerObjs = GameObject.FindGameObjectsWithTag("Player");
+		foreach (GameObject player in playerObjs)
+        {
+            target.Add(player.transform);
+        }
+
+
 		anim = GetComponent<Animation>();
-		boxCollider = GetComponent<BoxCollider>();
 
 		if(zombie_mode == 1){
 			walkSpeed = 3f;
@@ -61,27 +73,34 @@ public class NormalZombie : MonoBehaviour
 		}
 
 		directionChangeTimer = changeDirectionTime;
-		currentHealth = maxHealth;
     	}
 
     	// Update is called once per frame
     	void Update(){
-		//targetPosition.y -= 1f;
-		//float distance = Vector3.Distance(transform.position, targetPosition);
-		float distance = Vector3.Distance(transform.position, target.position);
+		//float distance = Vector3.Distance(transform.position, target.position);
+		
+		float curDistance = Mathf.Infinity;
+        	foreach (Transform player in target){
+            float distance = Vector3.Distance(transform.position, player.position);
+            if (distance < curDistance){
+                curDistance = distance;
+                curTarget = player;
+            }
+        }
+
 		if(isDead){
 				StartCoroutine(Die());
 		}
 		else if(!isAttacking){
-			if(distance < detectRange){
-				if (distance < attackRange){
+			if(curDistance < detectRange){
+				if (curDistance < attackRange){
 					if (!isAttacking){
 						isAttacking = true;
 					}
 					StartCoroutine(Attack());
 				}
 				else{
-					transform.LookAt(target);
+					transform.LookAt(curTarget);
 					if(zombie_mode == 1){
 						anim.Play("Walk");
 						transform.position += transform.forward * runSpeed * Time.deltaTime;
