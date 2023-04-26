@@ -1069,6 +1069,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1059739485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_Name
+      value: Robot Kyle
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
 --- !u!1001 &1102272335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1176,13 +1233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1129271252}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 1
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!65 &1129271254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1466,13 +1519,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1498945394}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 2
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!54 &1498945400
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1681,8 +1730,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 3
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!1001 &1648845143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1766,8 +1815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 4
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!65 &1648845148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2192,8 +2241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 5
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!54 &2145440747
 Rigidbody:
   m_ObjectHideFlags: 0

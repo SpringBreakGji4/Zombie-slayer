@@ -10,11 +10,11 @@ public class PlayerController : MonoBehaviour
 {
     
     [SerializeField] float mouseSensitivity, sprintSpeed, walkSpeed, jumpForce, smoothTime;
-    
     float verticalLookRotation;
     bool grounded;
     Vector3 smoothMoveVelocity;
     Vector3 moveAmount;
+    [SerializeField] GameObject ui;
     
     
     
@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Destroy");
             Destroy(GetComponentInChildren<Camera>().gameObject); //without this, player will below the ground
             Destroy(rb);
+            Destroy(ui);
         }
     }
 

@@ -18,7 +18,15 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] Transform playerListContent;
     [SerializeField] GameObject PlayerListItemPrefab;
     [SerializeField] GameObject startGameButton;
-    [SerializeField] private string randomRoomName;
+    private string _randomRoomName;
+    [SerializeField] TMP_Text text;
+    
+    /// <summary>
+    /// The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created.
+    /// </summary>
+    [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
+    [SerializeField]
+    private byte maxPlayersPerRoom = 3;
     
     void Awake()
     {
@@ -45,17 +53,18 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.Log("Joined Lobby");
         PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000"); //random generate username
         Debug.Log("User Name: " + PhotonNetwork.NickName);
+        text.text = PhotonNetwork.NickName;
     }
 
     public void CreateRoom()
     {
-        randomRoomName = "Room" + Random.Range(1, 999).ToString();
+        _randomRoomName = "Room" + Random.Range(1, 999).ToString();
         /*
         if (string.IsNullOrEmpty(roomNameInputField.text))
         {
             return;
         }*/
-        PhotonNetwork.CreateRoom(randomRoomName);
+        PhotonNetwork.CreateRoom(_randomRoomName, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
         MenuManager.Instance.OpenMenu("loading");
     }
 
