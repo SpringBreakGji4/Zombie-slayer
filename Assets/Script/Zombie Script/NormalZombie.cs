@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class NormalZombie : MonoBehaviour
@@ -78,7 +79,16 @@ public class NormalZombie : MonoBehaviour
     	// Update is called once per frame
     	void Update(){
 		//float distance = Vector3.Distance(transform.position, target.position);
-		
+		if (target.Count != PhotonNetwork.PlayerList.Length) ;
+		{
+			GameObject[] playerObjs = GameObject.FindGameObjectsWithTag("Player");
+
+			foreach (GameObject player in playerObjs)
+			{
+				Debug.Log("Player is : " + player);
+				target.Add(player.transform);
+			}
+		}
 		float curDistance = Mathf.Infinity;
         	foreach (Transform player in target){
             float distance = Vector3.Distance(transform.position, player.position);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class AdvZombie : MonoBehaviour
@@ -49,10 +50,10 @@ public class AdvZombie : MonoBehaviour
         	GameObject[] playerObjs = GameObject.FindGameObjectsWithTag("Player");
 		
 		foreach (GameObject player in playerObjs){
-			//Debug.Log("Player is : "+player);
+			Debug.Log("Player is : "+player);
             target.Add(player.transform);
         }
-		//Debug.Log("Player number : "+target.Count);
+		Debug.Log("Player number : "+target.Count);
 		anim = GetComponentInChildren<Animator>();
 
 
@@ -102,7 +103,18 @@ public class AdvZombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		float curDistance = Mathf.Infinity;
+	    if (target.Count != PhotonNetwork.PlayerList.Length) ;
+	    {
+		    GameObject[] playerObjs = GameObject.FindGameObjectsWithTag("Player");
+
+		    foreach (GameObject player in playerObjs)
+		    {
+			    Debug.Log("Player is : " + player);
+			    target.Add(player.transform);
+		    }
+	    }
+
+	    float curDistance = Mathf.Infinity;
         	foreach (Transform player in target){
             float distance = Vector3.Distance(transform.position, player.position);
             if (distance < curDistance){

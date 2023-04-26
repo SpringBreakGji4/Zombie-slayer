@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18018606, g: 0.22559257, b: 0.30678663, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -451,7 +451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168068442106150883, guid: 4ba5cbea767d9b54eb7a655b769517da, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ba5cbea767d9b54eb7a655b769517da, type: 3}
@@ -1082,7 +1082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_TagString
@@ -1176,13 +1176,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1129271252}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 1
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!65 &1129271254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1245,7 +1241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1148046965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1466,13 +1462,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1498945394}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 2
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!54 &1498945400
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1681,8 +1673,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 3
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!1001 &1648845143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1692,7 +1684,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100068, guid: 4ee39bc25eeaa144891bd0eadcc1bc51, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 4ee39bc25eeaa144891bd0eadcc1bc51, type: 3}
       propertyPath: m_RootOrder
@@ -1766,8 +1758,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 4
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!65 &1648845148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1810,7 +1802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
       propertyPath: m_TagString
@@ -2201,8 +2193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
   zombie_mode: 5
-  attack: 0
   maxHealth: 0
+  attack: 0
 --- !u!54 &2145440747
 Rigidbody:
   m_ObjectHideFlags: 0
