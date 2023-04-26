@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     Vector3 smoothMoveVelocity;
     Vector3 moveAmount;
     [SerializeField] GameObject ui;
+    [SerializeField] GameObject M4;
     
     
     
@@ -49,8 +50,15 @@ public class PlayerController : MonoBehaviour
         //photon part
         if(!PV.IsMine)
             return;
+        
+        Look();
         //photon part end
         //transform.Rotate(Vector3.up * Input.GetAxisRaw("Mouse X") * mouseSensitivity);
+    }
+
+    void Look()
+    {
+        M4.transform.localEulerAngles = GetComponentInChildren<Camera>().transform.localEulerAngles;
     }
     
     public void SetGroundedState(bool _grounded)

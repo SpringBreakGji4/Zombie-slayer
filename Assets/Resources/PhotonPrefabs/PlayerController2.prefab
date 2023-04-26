@@ -1191,6 +1191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1123581145413296072}
   - component: {fileID: 1123581145413296073}
+  - component: {fileID: 4392398379013901556}
   m_Layer: 0
   m_Name: XRCardboardRig
   m_TagString: Untagged
@@ -1233,6 +1234,25 @@ MonoBehaviour:
   vrInputModule: {fileID: 1123581146032563508}
   standardInputModule: {fileID: 1123581146032563510}
   dragRate: 0.2
+--- !u!114 &4392398379013901556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123581145413296075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629973eb53d8eff488716a6b69c99d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vibrateOnAwake: 1
+  startingShakeDistance: {x: 0, y: 0, z: 0}
+  startingRotationAmount: {x: 0, y: 0, z: 0, w: 0}
+  shakeSpeed: 60
+  decreaseMultiplier: 0.5
+  numberOfShakes: 8
+  shakeContinuous: 0
 --- !u!1 &1123581145934197453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1747,8 @@ MonoBehaviour:
   walkSpeed: 0
   jumpForce: 0
   smoothTime: 0
+  ui: {fileID: 0}
+  M4: {fileID: 185858428276810608}
 --- !u!143 &3671354852314010066
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1759,4 +1781,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   cameraObj: {fileID: 1123581145934197453}
-  joyStickMode: 1
+  joyStickMode: 0
