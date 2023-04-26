@@ -18,8 +18,16 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] Transform playerListContent;
     [SerializeField] GameObject PlayerListItemPrefab;
     [SerializeField] GameObject startGameButton;
-    [SerializeField] private string randomRoomName;
-
+    private string _randomRoomName;
+    [SerializeField] TMP_Text text;
+    
+    /// <summary>
+    /// The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created.
+    /// </summary>
+    [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
+    [SerializeField]
+    private byte maxPlayersPerRoom = 3;
+    
     void Awake()
     {
         Instance = this;
@@ -35,7 +43,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connected to Master");
         PhotonNetwork.JoinLobby();
-        //Debug.Log("We are now connected to the " + PhotonNetwork.CloudRegion + " server!");
+        Debug.Log("We are now connected to the " + PhotonNetwork.CloudRegion + " server!");
         PhotonNetwork.AutomaticallySyncScene = true; // Automatically load scene for all the client but not just host loaded 
     }
 
@@ -45,15 +53,18 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.Log("Joined Lobby");
         PhotonNetwork.NickName = "Player " + Random.Range(0, 1000).ToString("0000"); //random generate username
         Debug.Log("User Name: " + PhotonNetwork.NickName);
+        text.text = PhotonNetwork.NickName;
     }
 
     public void CreateRoom()
     {
+        _randomRoomName = "Room" + Random.Range(1, 999).ToString();
+        /*
         if (string.IsNullOrEmpty(roomNameInputField.text))
         {
             return;
-        }
-        PhotonNetwork.CreateRoom(roomNameInputField.text);
+        }*/
+        PhotonNetwork.CreateRoom(_randomRoomName, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
         MenuManager.Instance.OpenMenu("loading");
     }
 
@@ -63,7 +74,12 @@ public class Launcher : MonoBehaviourPunCallbacks
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
         
         Player[] players = PhotonNetwork.PlayerList;
-
+        
+        foreach(Transform child in playerListContent)
+        {
+            Destroy(child.gameObject);
+        }
+        
         for (int i = 0; i < players.Count(); i++)
         {
             Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);

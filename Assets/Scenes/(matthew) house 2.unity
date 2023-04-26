@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18018606, g: 0.22559257, b: 0.30678663, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3631,12 +3631,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 122047025}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 2
   maxHealth: 0
+  attack: 0
 --- !u!65 &122047027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7750,6 +7747,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   zombie_mode: 4
   maxHealth: 0
+  attack: 0
 --- !u!1 &447551316
 GameObject:
   m_ObjectHideFlags: 0
@@ -10340,12 +10338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 581420460}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 2
   maxHealth: 0
+  attack: 0
 --- !u!65 &581420462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11774,12 +11769,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 649711409}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 1
   maxHealth: 0
+  attack: 0
 --- !u!64 &649711411
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14242,12 +14234,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 832068335}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 1
   maxHealth: 0
+  attack: 0
 --- !u!64 &832068337
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14371,12 +14360,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 857279321}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 2
   maxHealth: 0
+  attack: 0
 --- !u!65 &857279323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17294,12 +17280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1129210995}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 2
   maxHealth: 0
+  attack: 0
 --- !u!65 &1129210997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17361,12 +17344,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1129271252}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 1
   maxHealth: 0
+  attack: 0
 --- !u!65 &1129271254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21679,12 +21659,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1432273691}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 1
   maxHealth: 0
+  attack: 0
 --- !u!64 &1432273693
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21817,6 +21794,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   zombie_mode: 3
   maxHealth: 0
+  attack: 0
 --- !u!95 &1440858250
 Animator:
   serializedVersion: 5
@@ -22481,12 +22459,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1498945394}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 2
   maxHealth: 0
+  attack: 0
 --- !u!54 &1498945400
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23098,12 +23073,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  zombie: {fileID: 1556182961}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 8
   zombie_mode: 1
   maxHealth: 0
+  attack: 0
 --- !u!64 &1556182963
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23629,6 +23601,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   zombie_mode: 3
   maxHealth: 0
+  attack: 0
 --- !u!43 &1570862042
 Mesh:
   m_ObjectHideFlags: 0
@@ -39090,6 +39063,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   zombie_mode: 4
   maxHealth: 0
+  attack: 0
 --- !u!65 &2039924907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40228,6 +40202,7 @@ MonoBehaviour:
   timer: {fileID: 0}
   zombie_mode: 4
   maxHealth: 0
+  attack: 0
 --- !u!1001 &2113512162
 PrefabInstance:
   m_ObjectHideFlags: 0
