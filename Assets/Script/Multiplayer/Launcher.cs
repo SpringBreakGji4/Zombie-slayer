@@ -5,6 +5,7 @@ using Photon.Pun;
 using TMPro;
 using Photon.Realtime;
 using System.Linq;
+using UnityEngine.EventSystems;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -20,7 +21,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject startGameButton;
     private string _randomRoomName;
     [SerializeField] TMP_Text text;
-    
+    [SerializeField] GameObject e;
+    [SerializeField] GameObject soloBtn;
+
     /// <summary>
     /// The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created.
     /// </summary>
@@ -141,8 +144,10 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
     }
-    public void Quit()
+
+    public void BackToStartMenu()
     {
-        Application.Quit();
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(soloBtn);
     }
 }
