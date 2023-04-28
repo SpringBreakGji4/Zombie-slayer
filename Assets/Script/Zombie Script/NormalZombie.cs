@@ -12,7 +12,7 @@ public class NormalZombie : MonoBehaviour
 	public int zombie_mode;
 	private float walkSpeed;
 	private float runSpeed;
-    	private float attackRange;
+    private float attackRange;
 	private float detectRange;
 	public int maxHealth;
 	public int attack;
@@ -85,7 +85,7 @@ public class NormalZombie : MonoBehaviour
 
 			foreach (GameObject player in playerObjs)
 			{
-				Debug.Log("Player is : " + player);
+				// Debug.Log("Player is : " + player);
 				target.Add(player.transform);
 			}
 		}
