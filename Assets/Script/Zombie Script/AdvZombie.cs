@@ -50,10 +50,10 @@ public class AdvZombie : MonoBehaviour
         	GameObject[] playerObjs = GameObject.FindGameObjectsWithTag("Player");
 		
 		foreach (GameObject player in playerObjs){
-			Debug.Log("Player is : "+player);
+			// Debug.Log("Player is : "+player);
             target.Add(player.transform);
         }
-		Debug.Log("Player number : "+target.Count);
+		// Debug.Log("Player number : "+target.Count);
 		anim = GetComponentInChildren<Animator>();
 
 
@@ -109,7 +109,7 @@ public class AdvZombie : MonoBehaviour
 
 		    foreach (GameObject player in playerObjs)
 		    {
-			    Debug.Log("Player is : " + player);
+			    // Debug.Log("Player is : " + player);
 			    target.Add(player.transform);
 		    }
 	    }

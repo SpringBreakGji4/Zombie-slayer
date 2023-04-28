@@ -12,13 +12,15 @@ public class Timer : MonoBehaviour
     public GameObject e;
     public GameObject restartMenu, restart;
     public GameObject gameinfo;
+    public GameObject player;
+    public GameObject playerBlood;
 
     // Start is called before the first frame update
     void Start()
     {
         zombieNum = 20;
         //timeValue = 90;
-	timeValue = 300;
+	    timeValue = 300;
     }
 
     // Update is called once per frame
@@ -47,6 +49,14 @@ public class Timer : MonoBehaviour
         {
             // Debug.Log("Win!");
             result.text = "You Win!";
+            gameinfo.SetActive(false);
+            EndGame();
+            zombieNum = 11;
+        }
+
+        if (player.GetComponent<PlayerShoot>().curHealth < 0) {
+            result.text = "You Lose!";
+            playerBlood.SetActive(false);
             gameinfo.SetActive(false);
             EndGame();
             zombieNum = 11;
