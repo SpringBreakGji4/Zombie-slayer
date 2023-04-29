@@ -206,6 +206,8 @@ MonoBehaviour:
   restartMenu: {fileID: 0}
   restart: {fileID: 0}
   gameinfo: {fileID: 0}
+  player: {fileID: 0}
+  playerBlood: {fileID: 0}
 --- !u!114 &804205478167529040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +412,8 @@ MonoBehaviour:
   restartMenu: {fileID: 0}
   restart: {fileID: 0}
   gameinfo: {fileID: 804205479083173032}
+  player: {fileID: 0}
+  playerBlood: {fileID: 0}
 --- !u!114 &804205479642038787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,6 +619,7 @@ GameObject:
   - component: {fileID: 3007475308551492053}
   - component: {fileID: 2858892293406896754}
   - component: {fileID: 6786261219665602390}
+  - component: {fileID: 1347731930825911579}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Player
@@ -812,6 +817,18 @@ MonoBehaviour:
   speed: 10
   cameraObj: {fileID: 1929886675948802413}
   joyStickMode: 0
+--- !u!114 &1347731930825911579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4345123480286830309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126494ae2a10a34499272ed97a6c9f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6604696694246603240
 GameObject:
   m_ObjectHideFlags: 0
