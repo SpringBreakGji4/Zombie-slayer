@@ -11105,13 +11105,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!54 &510874184
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16122,7 +16122,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34160
+  m_Name: pb_Mesh70204
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25474,7 +25474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7287137019065901088, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7287137019707172516, guid: 186741bf17cbb0e4fa3ef06daa1f190f, type: 3}
       propertyPath: m_IsActive
@@ -43902,7 +43902,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33158
+  m_Name: pb_Mesh69240
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -46472,7 +46472,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34324
+  m_Name: pb_Mesh70366
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
