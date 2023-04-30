@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum GunType
 {
@@ -33,29 +34,32 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Debug.Log(pickup);
     }
 
-    void PointerEnter()
+    public void PointerEnter()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            GameObject playerWeapon = GameObject.Find("M4(Player)");
-            PlayerShoot playershoot = player.GetComponent<PlayerShoot>();
-            playershoot.attack = attack;
-            playershoot.numOfBullet = numOfBullet;
-            pickup = true;
+        Debug.Log("pointer enter");
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     Debug.Log("pick up");
+        //     GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //     GameObject playerWeapon = GameObject.Find("M4(Player)");
+        //     PlayerShoot playershoot = player.GetComponent<PlayerShoot>();
+        //     playershoot.attack = attack;
+        //     playershoot.numOfBullet = numOfBullet;
+        //     pickup = true;
             
-            if (playerWeapon != null) {
-                playerWeapon.SetActive(false);
-            }
+        //     if (playerWeapon != null) {
+        //         playerWeapon.SetActive(false);
+        //     }
 
+        //     transform.SetParent(gunContainer);
             
-        }   
+        // }   
     }
 
-    void PointerExit()
+    public void PointerExit()
     {
         pickup = false; 
     }

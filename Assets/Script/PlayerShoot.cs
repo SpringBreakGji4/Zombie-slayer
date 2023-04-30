@@ -20,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 200;
+        maxHealth = 2000;
         curHealth = maxHealth;
         attack = 3;
         numOfBullet = 20;
