@@ -73,23 +73,23 @@ public class AdvZombie : MonoBehaviour
 			//walkSpeed = 2.2f;
 			runSpeed = 5f;
 			attackRange = 3f;
-			detectRange = 30f;
+			detectRange = 50f;
 			unsafeRange = 50f;
 			maxHealth = 50;
 			defense = 4;
-			attack = 0;
+			attack = 10;
 			changeDirectionTime = 6f;
 			reactTime = 0.5f;
 		}
 		else if(zombie_mode == 5){
 			//walkSpeed = 2.2f;
 			runSpeed = 8f;
-			attackRange = 5f;
+			attackRange = 8f;
 			detectRange = 50f;
 			unsafeRange = 50f;
 			maxHealth = 100;
 			defense = 5;
-			attack = 20;
+			attack = 50;
 			changeDirectionTime = 2f;
 			reactTime = 0.5f;
 		}
@@ -141,8 +141,9 @@ public class AdvZombie : MonoBehaviour
 					runSpeed = 8;
 				}
 				if (curDistance < attackRange){
+					transform.LookAt(curTarget);
 					isAttacking = true;
-					if(zombie_mode == 3){
+					if(zombie_mode == 3 || zombie_mode == 4){
 						StartCoroutine(Attack());
 					}
 					else if(zombie_mode == 5){
