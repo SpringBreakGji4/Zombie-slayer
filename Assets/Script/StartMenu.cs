@@ -8,6 +8,8 @@ public class StartMenu : MonoBehaviour
 {
     public GameObject e;
     public GameObject createRoomBtn;
+    public GameObject startBtn;
+    public GameObject soloBtn;
 
     void Start()
     {
@@ -19,6 +21,18 @@ public class StartMenu : MonoBehaviour
         yield return new WaitForSeconds(1);
         e.GetComponent<StandaloneInputModule>().enabled = true;
         e.GetComponent<XRCardboardInputModule>().enabled = false;
+    }
+
+    public void ShowIntro()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(startBtn);
+    }
+
+    public void BackToStartMenu()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(soloBtn);
     }
 
     public void StartSolo()

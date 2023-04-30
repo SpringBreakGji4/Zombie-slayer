@@ -145,9 +145,4 @@ public class Launcher : MonoBehaviourPunCallbacks
         Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);
     }
 
-    public void BackToStartMenu()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(soloBtn);
-    }
 }
