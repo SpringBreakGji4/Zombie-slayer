@@ -6,6 +6,8 @@ public class PlayerShoot : MonoBehaviour
 {
     public float maxHealth;
     public float curHealth;
+    public int attack;
+    public int numOfBullet;
 
     [SerializeField]
     GameObject _bulletSpark;
@@ -20,6 +22,8 @@ public class PlayerShoot : MonoBehaviour
     {
         maxHealth = 200;
         curHealth = maxHealth;
+        attack = 3;
+        numOfBullet = 20;
     }
 
     // Update is called once per frame
@@ -89,11 +93,11 @@ public class PlayerShoot : MonoBehaviour
             AdvZombie advZombie = hit.transform.GetComponent<AdvZombie>();       
 
             if (normalZombie != null && normalZombie.maxHealth > 0){
-                normalZombie.Damage(10);
+                normalZombie.Damage(attack);
             }   
 
             if (advZombie != null && advZombie.maxHealth > 0){
-                advZombie.Damage(10);
+                advZombie.Damage(attack);
             }      
             
         }
