@@ -8,6 +8,8 @@ public class PlayerShoot : MonoBehaviour
     public float curHealth;
     public int attack;
     public int numOfBullet;
+    public Transform gunContainer;
+    private bool InAttackRange = false;
 
     [SerializeField]
     GameObject _bulletSpark;
@@ -20,9 +22,9 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 2000;
+        maxHealth = 200;
         curHealth = maxHealth;
-        attack = 3;
+        attack = 10;
         numOfBullet = 20;
     }
 
@@ -31,45 +33,28 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("OK"))
         {
-            Shoot();
+            if (numOfBullet > 0) {
+                Shoot();
+                numOfBullet -= 1;
+                // Debug.Log(gunScript.numOfBullet);
+            } else {
+                Debug.Log("No Bullet");
+            } 
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collision)
+    {  
+        if (collision.transform.tag == "Zombie") {
+            InAttackRange = true;
+            StartCoroutine(HurtPlayer(collision));
+        }
+        
+    }
+
+    void OnTriggerExit(Collider collision)
     {
-        NormalZombie normalZombie = other.gameObject.GetComponent<NormalZombie>();
-        AdvZombie advZombie = other.gameObject.GetComponent<AdvZombie>();
-
-        if (normalZombie != null) {
-            StartCoroutine(ShowPlayerBlood(1));
-            if (normalZombie.zombie_mode == 1) {
-                Debug.Log("hit by normalZombie 1");
-            } else if (normalZombie.zombie_mode == 2) {
-                Debug.Log("hit by normalZombie 2");
-            } 
-            curHealth -= normalZombie.attack;
-            // Debug.Log("player health: " + curHealth);
-        }
-        else if (advZombie != null) {
-            StartCoroutine(ShowPlayerBlood(1));
-            if (advZombie.zombie_mode == 3) {
-                Debug.Log("hit by advZombie 3");
-            } 
-            // else if (advZombie.zombie_mode == 4) {
-            //     Debug.Log("advZombie 4");
-            // } 
-            else if (advZombie.zombie_mode == 5) {
-                Debug.Log("hit by advZombie 5");
-            }
-            curHealth -= advZombie.attack;
-            // Debug.Log("player health: " + curHealth);
-        }
-
-        IEnumerator ShowPlayerBlood (int seconds){
-            playerBlood.SetActive(true);
-            yield return new WaitForSeconds(seconds);
-            playerBlood.SetActive(false);
-        }
+        InAttackRange = false;
     }
 
     void Shoot()
@@ -102,4 +87,44 @@ public class PlayerShoot : MonoBehaviour
             
         }
     }
+
+    IEnumerator ShowPlayerBlood (int seconds){
+        playerBlood.SetActive(true);
+        yield return new WaitForSeconds(seconds);
+        playerBlood.SetActive(false);
+    }
+
+    IEnumerator HurtPlayer(Collider collision){
+        NormalZombie normalZombie = collision.gameObject.GetComponent<NormalZombie>();
+        AdvZombie advZombie = collision.gameObject.GetComponent<AdvZombie>();
+
+        while(InAttackRange == true) {
+            yield return new WaitForSeconds(1);
+            if (normalZombie != null) {
+                StartCoroutine(ShowPlayerBlood(1));
+                if (normalZombie.zombie_mode == 1) {
+                    Debug.Log("hit by normalZombie 1");
+                } else if (normalZombie.zombie_mode == 2) {
+                    Debug.Log("hit by normalZombie 2");
+            } 
+            curHealth -= normalZombie.attack;
+            // Debug.Log("player health: " + curHealth);
+            }
+            else if (advZombie != null) {
+                StartCoroutine(ShowPlayerBlood(1));
+                if (advZombie.zombie_mode == 3) {
+                    Debug.Log("hit by advZombie 3");
+                } else if (advZombie.zombie_mode == 4) {
+                    Debug.Log("advZombie 4");
+                } 
+                else if (advZombie.zombie_mode == 5) {
+                    Debug.Log("hit by advZombie 5");
+                }
+                curHealth -= advZombie.attack;
+                // Debug.Log("player health: " + curHealth);
+            }
+            
+        }
+    }
+
 }
