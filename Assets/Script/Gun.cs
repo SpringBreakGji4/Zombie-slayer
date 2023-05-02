@@ -49,37 +49,40 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var outline = GetComponent<Outline>();
+        if (outline.enabled) {
+            if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("js0"))
+            {
+                // Debug.Log("pick up");
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                PlayerShoot playershoot = player.GetComponent<PlayerShoot>();
+                playershoot.attack = attack;
+                playershoot.numOfBullet = numOfBullet;
+                pickup = true;
 
+                if (gunContainer.GetChild(0).gameObject != null) {
+                    Destroy(gunContainer.GetChild(0).gameObject);
+                }
+                
+                transform.SetParent(gunContainer);
+                transform.localPosition = Vector3.zero;
+                transform.localRotation = Quaternion.Euler(Vector3.zero);
+                transform.localScale = Vector3.one;
+                
+            }   
+        } 
     }
 
     public void PointerEnter()
     {
         var outline = GetComponent<Outline>();
         outline.enabled = true;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Debug.Log("pick up");
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            PlayerShoot playershoot = player.GetComponent<PlayerShoot>();
-            playershoot.attack = attack;
-            playershoot.numOfBullet = numOfBullet;
-            pickup = true;
-
-            if (gunContainer.GetChild(0).gameObject != null) {
-                Destroy(gunContainer.GetChild(0).gameObject);
-            }
-            
-            transform.SetParent(gunContainer);
-            transform.localPosition = Vector3.zero;
-            transform.localRotation = Quaternion.Euler(Vector3.zero);
-            transform.localScale = Vector3.one;
-            
-        }   
+        // Debug.Log("PointerEnter"); 
     }
 
     public void PointerExit()
     {
+        // Debug.Log("PointerExit");
         var outline = GetComponent<Outline>();
         outline.enabled = false;
 
