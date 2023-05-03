@@ -83,6 +83,14 @@ public class Network_NormalZombie : NetworkBehaviour
 
     	// Update is called once per frame
     	void Update(){
+		Debug.Log("normal Zombie health: " + maxHealth.Value);
+		if (maxHealth.Value <= 0)
+		{
+			isDead = true;
+			timerscript.zombieNum -= 1;
+			//Destroy(gameObject);
+		}
+
 		//float distance = Vector3.Distance(transform.position, target.position);
 		if (target.Count != PhotonNetwork.PlayerList.Length) ;
 		{
@@ -201,12 +209,12 @@ public class Network_NormalZombie : NetworkBehaviour
 		maxHealth.Value -= (damageAmount-defense);
 		// Debug.Log("hit normal, remain blood: " + maxHealth);
 		Debug.Log("hit normal, remain blood: " + maxHealth.Value);
-		if (maxHealth.Value <= 0)
-		{
-			isDead = true;
-			timerscript.zombieNum -= 1;
-			//Destroy(gameObject);
-		}
+		// if (maxHealth.Value <= 0)
+		// {
+		// 	isDead = true;
+		// 	timerscript.zombieNum -= 1;
+		// 	//Destroy(gameObject);
+		// }
 	}
 
 
