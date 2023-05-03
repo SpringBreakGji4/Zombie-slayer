@@ -29,20 +29,20 @@ public class Gun : MonoBehaviour
         pickup = false;
 
         if (type == GunType.Shotgun) {
-            attack = 5;
-            numOfBullet = 10;
+            attack = 30;
+            numOfBullet = 3;
         } else if (type == GunType.M4) {
-            attack = 6;
-            numOfBullet = 20;
+            attack = 10;
+            numOfBullet = 10;
         } else if (type == GunType.M79) {
-            attack = 7;
-            numOfBullet = 25;
-        } else if (type == GunType.Pistol) {
-            attack = 8;
-            numOfBullet = 5;
-        } else if (type == GunType.RailGun) {
-            attack = 9;
+            attack = 15;
             numOfBullet = 7;
+        } else if (type == GunType.Pistol) {
+            attack = 5;
+            numOfBullet = 20;
+        } else if (type == GunType.RailGun) {
+            attack = 20;
+            numOfBullet = 9;
         }
     }
 
