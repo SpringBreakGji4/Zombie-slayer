@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
     public int attack;
     public int numOfBullet;
     public Transform gunContainer;
+    public AudioClip fireSound;
     
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,7 @@ public class Gun : MonoBehaviour
                 PlayerShoot playershoot = player.GetComponent<PlayerShoot>();
                 playershoot.attack = attack;
                 playershoot.numOfBullet = numOfBullet;
+                playershoot.fireSound = fireSound;
                 pickup = true;
 
                 if (gunContainer.GetChild(0).gameObject != null) {
