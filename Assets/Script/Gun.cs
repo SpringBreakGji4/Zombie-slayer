@@ -31,19 +31,19 @@ public class Gun : MonoBehaviour
 
         if (type == GunType.Shotgun) {
             attack = 30;
-            numOfBullet = 3;
+            numOfBullet = 30;
         } else if (type == GunType.M4) {
             attack = 10;
-            numOfBullet = 10;
+            numOfBullet = 100;
         } else if (type == GunType.M79) {
             attack = 15;
-            numOfBullet = 7;
+            numOfBullet = 70;
         } else if (type == GunType.Pistol) {
             attack = 5;
-            numOfBullet = 20;
+            numOfBullet = 200;
         } else if (type == GunType.RailGun) {
             attack = 20;
-            numOfBullet = 9;
+            numOfBullet = 90;
         }
     }
 
