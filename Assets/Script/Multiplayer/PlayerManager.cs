@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -34,6 +34,6 @@ public class PlayerManager : MonoBehaviour
 		Debug.Log("Instantiated Player Controller");
 		// Instantiate our player controller
 		//Transform spawnpoint = SpawnManager.Instance.GetSpawnpoint();
-		PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Player"), Vector3.zero, Quaternion.identity);
+		PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerContorller"), Vector3.zero, Quaternion.identity);
 	}
 }
