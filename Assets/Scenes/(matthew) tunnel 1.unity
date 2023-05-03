@@ -3511,6 +3511,7 @@ GameObject:
   - component: {fileID: 132143891}
   - component: {fileID: 132143893}
   - component: {fileID: 132143892}
+  - component: {fileID: 132143894}
   m_Layer: 0
   m_Name: Vehicle (2)
   m_TagString: Untagged
@@ -3588,6 +3589,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132143890}
   m_Mesh: {fileID: 4300000, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
+--- !u!65 &132143894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132143890}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 208.6763, y: 74.8335, z: 508.41318}
+  m_Center: {x: -1.6610157, y: 47.27074, z: 1.5060172}
 --- !u!1 &143099098
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,6 +4118,7 @@ GameObject:
   - component: {fileID: 192718446}
   - component: {fileID: 192718448}
   - component: {fileID: 192718447}
+  - component: {fileID: 192718449}
   m_Layer: 0
   m_Name: Vehicle (8)
   m_TagString: Untagged
@@ -4181,6 +4196,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192718445}
   m_Mesh: {fileID: 4300000, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
+--- !u!65 &192718449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192718445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 208.67628, y: 69.10371, z: 508.41315}
+  m_Center: {x: -1.6602969, y: 44.40666, z: 1.5064971}
 --- !u!1 &203659598
 GameObject:
   m_ObjectHideFlags: 0
@@ -5037,7 +5065,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27468
+  m_Name: pb_Mesh31010
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5365,7 +5393,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26098
+  m_Name: pb_Mesh28754
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7512,6 +7540,8 @@ GameObject:
   - component: {fileID: 386047685}
   - component: {fileID: 386047687}
   - component: {fileID: 386047686}
+  - component: {fileID: 386047689}
+  - component: {fileID: 386047688}
   m_Layer: 0
   m_Name: Vehicle (1)
   m_TagString: Untagged
@@ -7588,6 +7618,33 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386047684}
+  m_Mesh: {fileID: 4300000, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
+--- !u!65 &386047688
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386047684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 208.67622, y: 36.074688, z: 508.41302}
+  m_Center: {x: -1.6615034, y: 27.891445, z: 1.5067109}
+--- !u!64 &386047689
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386047684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
 --- !u!1 &386363865
 GameObject:
@@ -9767,6 +9824,7 @@ GameObject:
   - component: {fileID: 491327252}
   - component: {fileID: 491327251}
   - component: {fileID: 491327250}
+  - component: {fileID: 491327253}
   m_Layer: 0
   m_Name: Hillbilly
   m_TagString: Untagged
@@ -9844,6 +9902,19 @@ Transform:
   m_Father: {fileID: 1460196336}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -33.263, y: 27.277, z: -15.792}
+--- !u!65 &491327253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491327249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 176.98804, y: 52.711796, z: 427.16202}
+  m_Center: {x: 69.24607, y: 44.36953, z: -11.552241}
 --- !u!1 &492141744
 GameObject:
   m_ObjectHideFlags: 0
@@ -12612,7 +12683,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-22552
+  m_Name: pb_Mesh29218
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18592,6 +18663,7 @@ GameObject:
   - component: {fileID: 802538958}
   - component: {fileID: 802538960}
   - component: {fileID: 802538959}
+  - component: {fileID: 802538961}
   m_Layer: 0
   m_Name: Hillbilly (3)
   m_TagString: Untagged
@@ -18669,13 +18741,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802538957}
   m_Mesh: {fileID: 4300010, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
+--- !u!65 &802538961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802538957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 176.98802, y: 147.00803, z: 427.16196}
+  m_Center: {x: 69.246, y: 91.517715, z: -11.552122}
 --- !u!43 &811292938
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25538
+  m_Name: pb_Mesh28000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27830,7 +27915,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-22148
+  m_Name: pb_Mesh28866
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30603,7 +30688,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-40588
+  m_Name: pb_Mesh30272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32555,7 +32640,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25446
+  m_Name: pb_Mesh27878
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33498,7 +33583,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27270
+  m_Name: pb_Mesh30718
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36634,6 +36719,7 @@ GameObject:
   - component: {fileID: 1425586316}
   - component: {fileID: 1425586318}
   - component: {fileID: 1425586317}
+  - component: {fileID: 1425586319}
   m_Layer: 0
   m_Name: Vehicle (9)
   m_TagString: Untagged
@@ -36711,6 +36797,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425586315}
   m_Mesh: {fileID: 4300000, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
+--- !u!65 &1425586319
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425586315}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 208.67622, y: 76.53685, z: 508.41293}
+  m_Center: {x: -1.6607751, y: 48.12311, z: 1.5055194}
 --- !u!1001 &1430560434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38046,7 +38145,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26396
+  m_Name: pb_Mesh29242
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41301,6 +41400,7 @@ GameObject:
   - component: {fileID: 1601587611}
   - component: {fileID: 1601587613}
   - component: {fileID: 1601587612}
+  - component: {fileID: 1601587614}
   m_Layer: 0
   m_Name: Vehicle (7)
   m_TagString: Untagged
@@ -41378,6 +41478,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601587610}
   m_Mesh: {fileID: 4300000, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
+--- !u!65 &1601587614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601587610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 208.67622, y: 148.72202, z: 508.4129}
+  m_Center: {x: -1.6597992, y: 84.21604, z: 1.5072324}
 --- !u!1 &1603188563
 GameObject:
   m_ObjectHideFlags: 0
@@ -41565,7 +41678,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6250
+  m_Name: pb_Mesh30776
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43064,7 +43177,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26328
+  m_Name: pb_Mesh29100
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43362,7 +43475,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26568
+  m_Name: pb_Mesh28968
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43546,6 +43659,7 @@ GameObject:
   - component: {fileID: 1703234966}
   - component: {fileID: 1703234968}
   - component: {fileID: 1703234967}
+  - component: {fileID: 1703234969}
   m_Layer: 0
   m_Name: Vehicle (4)
   m_TagString: Untagged
@@ -43560,8 +43674,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703234965}
-  m_LocalRotation: {x: -0.2802055, y: 0.4209025, z: -0.1384988, w: 0.8515539}
-  m_LocalPosition: {x: -143.7, y: 124.8, z: 217}
+  m_LocalRotation: {x: -0.26516995, y: 0.50288373, z: -0.16547489, w: 0.80586034}
+  m_LocalPosition: {x: -144.69, y: 124.22, z: 216.21}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43572,7 +43686,7 @@ Transform:
   - {fileID: 612706952}
   m_Father: {fileID: 1460196336}
   m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: -21.139, y: 58.405, z: -30.384}
+  m_LocalEulerAnglesHint: {x: -15.126, y: 68.514, z: -33.542}
 --- !u!23 &1703234967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43623,6 +43737,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703234965}
   m_Mesh: {fileID: 4300000, guid: b701be3094f3ba54bb698f800bdb7d4b, type: 3}
+--- !u!65 &1703234969
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703234965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 208.67625, y: 148.72202, z: 508.413}
+  m_Center: {x: -1.6607771, y: 84.21578, z: 1.5069852}
 --- !u!1 &1704096972 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1309486516299566, guid: 227ee07e9e5b7914ba8fbb8f430be9a5, type: 3}
@@ -44309,7 +44436,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27436
+  m_Name: pb_Mesh30968
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -48338,7 +48465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930598618}
   m_LocalRotation: {x: 0.24361058, y: 0.6968478, z: -0.19506128, w: -0.6457616}
-  m_LocalPosition: {x: -229.6, y: 77.9, z: 150.1}
+  m_LocalPosition: {x: -229.71, y: 76.88, z: 150.85}
   m_LocalScale: {x: 0.63266593, y: 0.71101, z: 0.2983277}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49534,7 +49661,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25862
+  m_Name: pb_Mesh28452
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -52273,6 +52400,7 @@ GameObject:
   - component: {fileID: 2081301954}
   - component: {fileID: 2081301953}
   - component: {fileID: 2081301952}
+  - component: {fileID: 2081301955}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Untagged
@@ -52350,6 +52478,19 @@ Transform:
   m_Father: {fileID: 1460196336}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -11.925, y: -73.372, z: 34.679}
+--- !u!65 &2081301955
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081301951}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 208.67628, y: 56.500477, z: 508.41315}
+  m_Center: {x: -1.6602972, y: 38.105125, z: 1.5064491}
 --- !u!1 &2085600830
 GameObject:
   m_ObjectHideFlags: 0
