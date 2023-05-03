@@ -56,7 +56,8 @@ public class NormalZombie : MonoBehaviour
 			walkSpeed = 3f;
 			runSpeed = 3f;
 			attackRange = 3f;
-			detectRange = 30f;
+			//detectRange = 30f;
+			detectRange = 20f;
 			maxHealth = 50;
 			defense = 2;
 			attack = 5;
@@ -66,7 +67,8 @@ public class NormalZombie : MonoBehaviour
 			walkSpeed = 2.2f;
 			runSpeed = 7f;
 			attackRange = 3f;
-			detectRange = 40f;
+			//detectRange = 40f;
+			detectRange = 20f;
 			maxHealth = 50;
 			defense = 3;
 			attack = 8;

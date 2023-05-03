@@ -207,6 +207,7 @@ MonoBehaviour:
   attack: 0
   numOfBullet: 0
   gunContainer: {fileID: 5374062059764005342}
+  fireSound: {fileID: 0}
   _bulletSpark: {fileID: 100002, guid: 0c631565793959f47a2464ec266aca7c, type: 3}
   _blood: {fileID: 100000, guid: 14c0bb7df2abebe40809248b2039011a, type: 3}
   playerBlood: {fileID: 0}
