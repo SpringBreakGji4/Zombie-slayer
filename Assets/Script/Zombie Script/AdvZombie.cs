@@ -60,7 +60,7 @@ public class AdvZombie : MonoBehaviour
 		if(zombie_mode == 3){
 			//walkSpeed = 2.2f;
 			runSpeed = 5f;
-			attackRange = 5f;
+			attackRange = 5.5f;
 			detectRange = 30f;
 			unsafeRange = 70f;
 			maxHealth = 50;
@@ -72,7 +72,7 @@ public class AdvZombie : MonoBehaviour
 		else if(zombie_mode == 4){
 			//walkSpeed = 2.2f;
 			runSpeed = 5f;
-			attackRange = 3f;
+			attackRange = 3.5f;
 			detectRange = 50f;
 			unsafeRange = 50f;
 			maxHealth = 50;
@@ -84,7 +84,7 @@ public class AdvZombie : MonoBehaviour
 		else if(zombie_mode == 5){
 			//walkSpeed = 2.2f;
 			runSpeed = 8f;
-			attackRange = 8f;
+			attackRange = 7f;
 			detectRange = 50f;
 			unsafeRange = 50f;
 			maxHealth = 100;
@@ -124,8 +124,8 @@ public class AdvZombie : MonoBehaviour
         }
 		
         //float distance = Vector3.Distance(transform.position, target.position);
-		//Debug.Log(target.position);
-		
+		// Debug.Log(curTarget.position);
+		// Debug.Log("Distance : "+curDistance);
 
 		if(isDead){
 				StartCoroutine(Die());

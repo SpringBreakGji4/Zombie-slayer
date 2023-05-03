@@ -10,6 +10,7 @@ public class PlayerShoot : MonoBehaviour
     public int numOfBullet;
     public Transform gunContainer;
     private bool InAttackRange = false;
+    public AudioClip fireSound;
 
     [SerializeField]
     GameObject _bulletSpark;
@@ -35,6 +36,7 @@ public class PlayerShoot : MonoBehaviour
         {
             if (numOfBullet > 0) {
                 Shoot();
+                gunContainer.GetChild(0).gameObject.GetComponent<AudioSource>().PlayOneShot(fireSound);
                 numOfBullet -= 1;
                 // Debug.Log(gunScript.numOfBullet);
             } else {
