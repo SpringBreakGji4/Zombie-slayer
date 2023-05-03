@@ -637,6 +637,7 @@ MonoBehaviour:
   attack: 0
   numOfBullet: 0
   gunContainer: {fileID: 5374062059764005342}
+  fireSound: {fileID: 0}
 --- !u!4 &5374062058537781727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 403036, guid: c656de207260bf54883c10f990df79db, type: 3}
