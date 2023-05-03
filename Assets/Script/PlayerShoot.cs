@@ -80,10 +80,12 @@ public class PlayerShoot : MonoBehaviour
             AdvZombie advZombie = hit.transform.GetComponent<AdvZombie>();       
 
             if (normalZombie != null && normalZombie.maxHealth > 0){
+                // Debug.Log("attack: " + attack);
                 normalZombie.Damage(attack);
             }   
 
             if (advZombie != null && advZombie.maxHealth > 0){
+                // Debug.Log("attack: " + attack);
                 advZombie.Damage(attack);
             }      
             
